@@ -13,7 +13,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Integrante 3** - [Giancarlo Jose Puquio Rojas](https://github.com/giancarloPuquio)
 * **Integrante 4** - [Gonzalo Alejo Companys](https://github.com/gcompanys)
 
-Corrector: **{Corrector}**
+Corrector: Sebastian Blazquez
 
 ### Informe
 
