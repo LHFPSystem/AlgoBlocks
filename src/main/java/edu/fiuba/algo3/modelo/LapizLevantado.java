@@ -1,4 +1,4 @@
 package edu.fiuba.algo3.modelo;
 
-public class LapizLevantado {
+public class LapizLevantado extends EstadoLapiz {
 }

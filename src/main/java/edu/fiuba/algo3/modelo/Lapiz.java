@@ -2,7 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 public class Lapiz {
 
-    LapizLevantado estadoLapiz;
+    EstadoLapiz estadoLapiz;
 
 
 
@@ -10,7 +10,7 @@ public class Lapiz {
         this.estadoLapiz = lapizLevantado;
     }
 
-    public LapizLevantado getEstadoLapiz(){
+    public EstadoLapiz getEstadoLapiz(){
         return this.estadoLapiz;
     }
 
