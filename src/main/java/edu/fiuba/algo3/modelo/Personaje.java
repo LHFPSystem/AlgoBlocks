@@ -4,5 +4,16 @@ public class Personaje {
 
     protected int posicionX;
     protected int posicionY;
-    Lapiz unLapiz = new Lapiz();
+    protected Lapiz unLapiz;
+
+
+    //constructor
+    public Personaje(){
+        this.unLapiz = new Lapiz(new LapizLevantado());
+    }
+
+
+    public Lapiz getLapiz(){
+        return this.unLapiz;
+    }
 }
