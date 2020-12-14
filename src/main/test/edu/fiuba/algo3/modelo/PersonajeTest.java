@@ -30,5 +30,17 @@ public class PersonajeTest {
 
     }
 
+    @Test
+    public void testPersonajeBajaYsubeElLapiz(){
+
+        Personaje personaje = new Personaje();
+
+        personaje.bajarLapiz();
+
+        personaje.levantarLapiz();
+
+        assertTrue((personaje.getLapiz()).getEstadoLapiz() instanceof LapizLevantado);
+    }
+
 
 }

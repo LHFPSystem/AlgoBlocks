@@ -20,4 +20,8 @@ public class Personaje {
     public void bajarLapiz(){
         this.unLapiz.cambiarEstado(new LapizNoLevantado());
     }
+
+    public void levantarLapiz(){
+        this.unLapiz.cambiarEstado(new LapizLevantado());
+    }
 }
