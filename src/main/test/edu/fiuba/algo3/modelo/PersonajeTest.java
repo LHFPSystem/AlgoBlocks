@@ -18,4 +18,17 @@ public class PersonajeTest {
 
 
     }
+
+    @Test
+    public void testPersonajeBajaElLapiz(){
+
+        Personaje personaje = new Personaje();
+
+        personaje.bajarLapiz();
+
+        assertTrue((personaje.getLapiz()).getEstadoLapiz() instanceof LapizNoLevantado);
+
+    }
+
+
 }

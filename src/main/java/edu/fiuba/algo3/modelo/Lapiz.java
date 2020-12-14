@@ -14,4 +14,8 @@ public class Lapiz {
         return this.estadoLapiz;
     }
 
+    public void cambiarEstado(EstadoLapiz unEstado){
+        this.estadoLapiz = unEstado;
+    }
+
 }
