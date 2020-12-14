@@ -2,10 +2,6 @@ package edu.fiuba.algo3.modelo;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import edu.fiuba.algo3.modelo.LapizLevantado;
-import edu.fiuba.algo3.modelo.Personaje;
-import edu.fiuba.algo3.modelo.Lapiz;
-
 
 public class PersonajeTest {
 
