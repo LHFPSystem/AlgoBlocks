@@ -9,6 +9,10 @@ public class Tablero {
     List<Bloque> bloques = new ArrayList<Bloque>();
     Personaje unPersonaje = new Personaje();
 
+    public void setBloque(Bloque unBloque){
+        bloques.add(unBloque);
+    }
+
     void ejecutarAlgoritmo(){
 
         for (Bloque bloque : bloques) {

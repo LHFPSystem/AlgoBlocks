@@ -4,7 +4,7 @@ public class BloqueLapizAbajo implements Bloque{
 
     @Override
     public void EjecutarCompartamiento(Personaje unPersonaje){
-
+        unPersonaje.bajarLapiz();
         System.out.println("Lapiz Abajo");
 
     }
