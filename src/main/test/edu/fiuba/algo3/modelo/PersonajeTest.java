@@ -97,4 +97,79 @@ public class PersonajeTest {
         assertTrue((personaje.getLapiz()).getEstadoLapiz() instanceof LapizLevantado);
     }
 
+    @Test
+    public void test10PersonjaseSeMueveIzquierdaLuegoDerechaVuelveAlOrigen(){
+        Personaje personaje = new Personaje();
+        Bloque bloqueMoverIzquierda = new BloqueMoverIzquierda();
+        Bloque bloqueMoverDerecha = new BloqueMoverDerecha();
+
+        bloqueMoverIzquierda.EjecutarCompartamiento(personaje);
+        bloqueMoverDerecha.EjecutarCompartamiento(personaje);
+
+        assertEquals(personaje.getPosicionX(), 0);
+    }
+
+    @Test
+    public void test11PersonjaseSeMueveArribaLuegoAbajoVuelveAlorigen(){
+        Personaje personaje = new Personaje();
+        Bloque bloqueMoverArriba = new BloqueMoverArriba();
+        Bloque bloqueMoverAbajo = new BloqueMoverAbajo();
+
+        bloqueMoverArriba.EjecutarCompartamiento(personaje);
+        bloqueMoverAbajo.EjecutarCompartamiento(personaje);
+
+        assertEquals(personaje.getPosicionY(), 0);
+    }
+
+    @Test
+    public void test12PersonjaseSeMueveIzquierdaYArriba(){
+        Personaje personaje = new Personaje();
+        Bloque bloqueMoverArriba = new BloqueMoverArriba();
+        Bloque bloqueMoverIzquierda = new BloqueMoverIzquierda();
+
+        bloqueMoverArriba.EjecutarCompartamiento(personaje);
+        bloqueMoverIzquierda.EjecutarCompartamiento(personaje);
+
+        assertEquals(personaje.getPosicionX(), -1);
+        assertEquals(personaje.getPosicionY(), 1);
+    }
+
+    @Test
+    public void test13PersonjaseSeMueveIzquierdaYAbajo(){
+        Personaje personaje = new Personaje();
+        Bloque bloqueMoverAbajo = new BloqueMoverAbajo();
+        Bloque bloqueMoverIzquierda = new BloqueMoverIzquierda();
+
+        bloqueMoverAbajo.EjecutarCompartamiento(personaje);
+        bloqueMoverIzquierda.EjecutarCompartamiento(personaje);
+
+        assertEquals(personaje.getPosicionX(), -1);
+        assertEquals(personaje.getPosicionY(), -1);
+    }
+
+    @Test
+    public void test14PersonjaseSeMueveDerechaYArriba(){
+        Personaje personaje = new Personaje();
+        Bloque bloqueMoverArriba = new BloqueMoverArriba();
+        Bloque bloqueMoverDerecha = new BloqueMoverDerecha();
+
+        bloqueMoverArriba.EjecutarCompartamiento(personaje);
+        bloqueMoverDerecha.EjecutarCompartamiento(personaje);
+
+        assertEquals(personaje.getPosicionX(), 1);
+        assertEquals(personaje.getPosicionY(), 1);
+    }
+
+    @Test
+    public void test15PersonjaseSeMueveDerechaYAbajo(){
+        Personaje personaje = new Personaje();
+        Bloque bloqueMoverAbajo = new BloqueMoverAbajo();
+        Bloque bloqueMoverDerecha = new BloqueMoverDerecha();
+
+        bloqueMoverAbajo.EjecutarCompartamiento(personaje);
+        bloqueMoverDerecha.EjecutarCompartamiento(personaje);
+
+        assertEquals(personaje.getPosicionX(), 1);
+        assertEquals(personaje.getPosicionY(), -1);
+    }
 }
