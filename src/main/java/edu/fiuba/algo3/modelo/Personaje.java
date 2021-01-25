@@ -2,8 +2,8 @@ package edu.fiuba.algo3.modelo;
 
 public class Personaje {
 
-    protected int posicionX = 0;
-    protected int posicionY = 0;
+    private int posicionX = 0;
+    private int posicionY = 0;
     protected Lapiz unLapiz;
 
 
@@ -11,7 +11,6 @@ public class Personaje {
     public Personaje(){
         this.unLapiz = new Lapiz(new LapizLevantado());
     }
-
 
     public Lapiz getLapiz(){
         return this.unLapiz;
@@ -44,6 +43,7 @@ public class Personaje {
     public int getPosicionX(){
         return posicionX;
     }
+
     public int getPosicionY(){
         return posicionY;
     }

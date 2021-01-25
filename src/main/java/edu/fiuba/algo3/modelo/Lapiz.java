@@ -4,8 +4,6 @@ public class Lapiz {
 
     EstadoLapiz estadoLapiz;
 
-
-
     public Lapiz(LapizLevantado lapizLevantado){
         this.estadoLapiz = lapizLevantado;
     }

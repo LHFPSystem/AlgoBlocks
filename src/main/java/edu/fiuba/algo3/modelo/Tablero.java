@@ -17,7 +17,7 @@ public class Tablero {
 
         for (Bloque bloque : bloques) {
 
-            bloque.EjecutarCompartamiento(unPersonaje);
+            bloque.ejecutar(unPersonaje);
 
         }
     }
