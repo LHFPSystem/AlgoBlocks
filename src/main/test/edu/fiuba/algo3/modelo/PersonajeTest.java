@@ -2,6 +2,10 @@ package edu.fiuba.algo3.modelo;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+// Mock test para los bloques usando un personaje mock.
+// Separar PersonajeTest y BloqueTest Para testear las funcionalidad por separado.
+// Analizar test sobre el Lapiz (EstadoLapiz). Problema con el instanceof. Violación de encapsulamiento.
+
 public class PersonajeTest {
 
     @Test

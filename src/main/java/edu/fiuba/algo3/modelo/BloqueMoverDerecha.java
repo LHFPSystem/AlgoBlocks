@@ -8,4 +8,8 @@ public class BloqueMoverDerecha implements Bloque{
         System.out.println("Personaje derecha");
 
     }
+
+    public void ejecutarBloqueInverso(Personaje unPersonaje) {
+        unPersonaje.moverIzquierda();
+    }
 }
