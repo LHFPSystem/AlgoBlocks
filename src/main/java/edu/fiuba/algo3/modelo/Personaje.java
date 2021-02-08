@@ -14,6 +14,10 @@ public class Personaje {
         this.lapizLenvantado = true;
     }
 
+    public boolean estaElLapizLevantado(){
+        return lapizLenvantado;
+    }
+
     public void moverDerecha(Dibujo unDibujo){
         posicionX++;
         unDibujo.agregarTramo(new Tramo(posicionX, posicionY, lapizLenvantado));
