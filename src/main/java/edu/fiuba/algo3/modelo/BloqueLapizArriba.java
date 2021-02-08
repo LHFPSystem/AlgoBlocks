@@ -5,7 +5,9 @@ public class BloqueLapizArriba implements Bloque{
     @Override
     public void ejecutar(Personaje unPersonaje){
         unPersonaje.levantarLapiz();
-        System.out.println("Lapiz Arriba");
+    }
 
+    public void ejecutarBloqueInverso(Personaje unPersonaje) {
+        unPersonaje.bajarLapiz();
     }
 }

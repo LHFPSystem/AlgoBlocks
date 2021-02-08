@@ -3,14 +3,14 @@ package edu.fiuba.algo3.modelo;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class BloqueInvertir implements Bloque {
-    ArrayList<Bloque> listaBloques;
+public class BloqueAlgoritmoPersonalizado implements Bloque {
+    private ArrayList<Bloque> listaBloques;
 
-    public BloqueRepetir() {
-        this.listaBloques = new ArrayList<Bloque>();
+    public BloqueAlgoritmoPersonalizado() {
+        listaBloques = new ArrayList<>(Bloque);
     }
 
-    public void agregarBloque(int posicion,Bloque unBloque) {
+    public void agregarBloque(int posicion, Bloque unBloque) {
         this.listaBloques.add(posicion, unBloque);
     }
 
@@ -19,7 +19,7 @@ public class BloqueInvertir implements Bloque {
         Iterator<Bloque> iter = this.listaBloques.iterator();
 
         while (iter.hasNext()) {
-            iter.next().ejecutarBloqueInverso(unPersonaje);
+            iter.next().ejecutar(unPersonaje);
         }
     }
 }

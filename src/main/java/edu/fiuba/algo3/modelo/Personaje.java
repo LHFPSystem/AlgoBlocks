@@ -4,40 +4,34 @@ public class Personaje {
 
     private int posicionX = 0;
     private int posicionY = 0;
-    protected Lapiz unLapiz;
-
-
-    //constructor
-    public Personaje(){
-        this.unLapiz = new Lapiz(new LapizLevantado());
-    }
-
-    public Lapiz getLapiz(){
-        return this.unLapiz;
-    }
+    private boolean lapizLenvantado = true;
 
     public void bajarLapiz(){
-        this.unLapiz.cambiarEstado(new LapizNoLevantado());
+        this.lapizLenvantado = false;
     }
 
     public void levantarLapiz(){
-        this.unLapiz.cambiarEstado(new LapizLevantado());
+        this.lapizLenvantado = true;
     }
 
-    public void moverDerecha(){
+    public void moverDerecha(Dibujo unDibujo){
         posicionX++;
+        unDibujo.agregarTramo(new Tramo(posicionX, posicionY, lapizLenvantado));
     }
 
-    public void moverIzquierda(){
+    public void moverIzquierda(Dibujo unDibujo){
         posicionX--;
+        unDibujo.agregarTramo(new Tramo(posicionX, posicionY, lapizLenvantado));
     }
 
-    public void subir(){
+    public void subir(Dibujo unDibujo){
         posicionY++;
+        unDibujo.agregarTramo(new Tramo(posicionX, posicionY, lapizLenvantado));
     }
 
-    public void bajar(){
+    public void bajar(Dibujo unDibujo){
         posicionY--;
+        unDibujo.agregarTramo(new Tramo(posicionX, posicionY, lapizLenvantado));
     }
 
     public int getPosicionX(){

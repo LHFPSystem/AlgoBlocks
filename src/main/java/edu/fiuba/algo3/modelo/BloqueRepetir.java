@@ -4,28 +4,28 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class BloqueRepetir implements Bloque {
-    int cantidad_repeticiones;
-    ArrayList<Bloque> lista_bloques;
+    int cantidadRepeticiones;
+    ArrayList<Bloque> listaBloques;
 
     public BloqueRepetir() {
-        this.cantidad_repeticiones = 0;
-        this.lista_bloques = new ArrayList<Bloque>();
+        this.cantidadRepeticiones = 0;
+        this.listaBloques = new ArrayList<Bloque>();
     }
 
     public void establecerCantidadRepeticiones(int n) {
-        this.cantidad_repeticiones = n;
+        this.cantidadRepeticiones = n;
     }
 
     public void agregarBloque(int posicion,Bloque unBloque) {
-        this.lista_bloques.add(posicion, unBloque);
+        this.listaBloques.add(posicion, unBloque);
     }
 
     @Override
     public void ejecutar(Personaje unPersonaje) {
         Iterator<Bloque> iter;
 
-        for (int contador = 0; contador < cantidad_repeticiones; contador++) {
-            iter = this.lista_bloques.iterator();
+        for (int contador = 0; contador < cantidadRepeticiones; contador++) {
+            iter = this.listaBloques.iterator();
 
             while (iter.hasNext()) {
                 iter.next().ejecutar(unPersonaje);

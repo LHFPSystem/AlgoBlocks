@@ -5,6 +5,9 @@ public class BloqueMoverAbajo implements Bloque{
     @Override
     public void ejecutar(Personaje unPersonaje){
         unPersonaje.bajar();
-        System.out.println("Personaje Abajo");
+    }
+
+    public void ejecutarBloqueInverso(Personaje unPersonaje) {
+        unPersonaje.subir();
     }
 }
