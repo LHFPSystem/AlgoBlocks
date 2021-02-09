@@ -14,5 +14,4 @@ public class BloqueMoverAbajoTest {
 
         assertEquals(personaje.getPosicionY(),-1);
     }
-
 }

@@ -63,7 +63,7 @@ public class BloqueInvertirTest {
     }
 
     @Test
-    public void test05seInvierteElComportamientoDeDosBloquesIguales() {
+    public void test06seInvierteElComportamientoDeDosBloquesIguales() {
         BloqueInvertir unBloque = new BloqueInvertir();
         Personaje unPersonaje = new Personaje();
 

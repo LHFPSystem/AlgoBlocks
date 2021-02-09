@@ -2,7 +2,6 @@ package edu.fiuba.algo3.modelo;
 
 import java.util.ArrayList;
 
-
 public class BloqueAlgoritmoPersonalizado implements Bloque {
     private ArrayList<Bloque> listaBloques = new ArrayList<>();
 
@@ -18,7 +17,5 @@ public class BloqueAlgoritmoPersonalizado implements Bloque {
     }
 
     @Override
-    public void ejecutarBloqueInverso(Personaje unPersonaje) {
-
-    }
+    public void ejecutarBloqueInverso(Personaje unPersonaje) {}
 }

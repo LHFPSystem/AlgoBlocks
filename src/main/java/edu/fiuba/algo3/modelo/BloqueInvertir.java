@@ -17,7 +17,5 @@ public class BloqueInvertir implements Bloque {
     }
 
     @Override
-    public void ejecutarBloqueInverso(Personaje unPersonaje){
-
-    }
+    public void ejecutarBloqueInverso(Personaje unPersonaje){}
 }

@@ -9,7 +9,6 @@ public class Dibujo {
 
     public Dibujo() {
         tramos = new ArrayList<Tramo>();
-
     }
 
     public void agregarTramo(Personaje unPersonaje) {
@@ -20,6 +19,7 @@ public class Dibujo {
     }
 
     public Tramo mostrarTramoYAvanzarAlSiguiente() {
+
         if (iter.hasNext()) {
             return iter.next();
         }

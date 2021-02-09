@@ -41,5 +41,4 @@ public class Personaje {
     public int getPosicionY(){
         return posicionY;
     }
-
 }
