@@ -13,7 +13,7 @@ public class PersonajeTest {
 
         Personaje personaje = new Personaje();
 
-        assertTrue((personaje.getLapiz()).getEstadoLapiz() instanceof LapizLevantado);
+        assertEquals(personaje.estaElLapizLevantado(),true);
 
 
     }
@@ -25,7 +25,7 @@ public class PersonajeTest {
 
         personaje.bajarLapiz();
 
-        assertTrue((personaje.getLapiz()).getEstadoLapiz() instanceof LapizNoLevantado);
+        assertEquals(personaje.estaElLapizLevantado(),false);
 
     }
 
@@ -38,14 +38,16 @@ public class PersonajeTest {
 
         personaje.levantarLapiz();
 
-        assertTrue((personaje.getLapiz()).getEstadoLapiz() instanceof LapizLevantado);
+        assertEquals(personaje.estaElLapizLevantado(),true);
     }
 
     @Test
     public void test04PersonajeSeMueveUnaPosicionAlaDerecha(){
         Personaje personaje = new Personaje();
 
-        personaje.moverDerecha();
+        Dibujo dibujo = new Dibujo();
+
+        personaje.moverDerecha(dibujo);
 
         assertEquals(personaje.getPosicionX(),1);
     }
@@ -54,7 +56,9 @@ public class PersonajeTest {
     public void test05PersonajeSeMueveUnaPosicionAlaIzquierda(){
         Personaje personaje = new Personaje();
 
-        personaje.moverIzquierda();
+        Dibujo dibujo = new Dibujo();
+
+        personaje.moverIzquierda(dibujo);
 
         assertEquals(personaje.getPosicionX(),-1);
     }
@@ -63,7 +67,9 @@ public class PersonajeTest {
     public void test06PersonajeSubeUnaPosicion(){
         Personaje personaje = new Personaje();
 
-        personaje.subir();
+        Dibujo dibujo = new Dibujo();
+
+        personaje.subir(dibujo);
 
         assertEquals(personaje.getPosicionY(),1);
     }
@@ -72,7 +78,9 @@ public class PersonajeTest {
     public void test07PersonajeBajaUnaPosicion(){
         Personaje personaje = new Personaje();
 
-        personaje.bajar();
+        Dibujo dibujo = new Dibujo();
+
+        personaje.bajar(dibujo);
 
         assertEquals(personaje.getPosicionY(),-1);
     }
