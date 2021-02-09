@@ -6,6 +6,10 @@ import java.util.Iterator;
 public class BloqueInvertir implements Bloque {
     ArrayList<Bloque> listaBloques;
 
+    public void ejecutarBloqueInverso(Personaje unPersonaje){
+
+    }
+
     public BloqueRepetir() {
         this.listaBloques = new ArrayList<Bloque>();
     }
