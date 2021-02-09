@@ -52,7 +52,8 @@ public class BloqueTest {
 
         bloqueBajarLapiz.ejecutar(personaje);
 
-        assertTrue((personaje.getLapiz()).getEstadoLapiz() instanceof LapizNoLevantado);
+        assertEquals(personaje.estaElLapizLevantado(), false);
+//        assertTrue((personaje.getLapiz()).getEstadoLapiz() instanceof LapizNoLevantado);
     }
 
     @Test
@@ -61,8 +62,9 @@ public class BloqueTest {
         Bloque bloqueSubirLapiz = new BloqueLapizArriba();
 
         bloqueSubirLapiz.ejecutar(personaje);
+        assertEquals(personaje.estaElLapizLevantado(), true);
 
-        assertTrue((personaje.getLapiz()).getEstadoLapiz() instanceof LapizLevantado);
+//        assertTrue((personaje.getLapiz()).getEstadoLapiz() instanceof LapizLevantado);
     }
 
     @Test

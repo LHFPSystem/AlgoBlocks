@@ -18,24 +18,20 @@ public class Personaje {
         return lapizLenvantado;
     }
 
-    public void moverDerecha(Dibujo unDibujo){
+    public void moverDerecha(){
         posicionX++;
-        unDibujo.agregarTramo(new Tramo(posicionX, posicionY, lapizLenvantado));
     }
 
-    public void moverIzquierda(Dibujo unDibujo){
+    public void moverIzquierda(){
         posicionX--;
-        unDibujo.agregarTramo(new Tramo(posicionX, posicionY, lapizLenvantado));
     }
 
-    public void subir(Dibujo unDibujo){
+    public void subir(){
         posicionY++;
-        unDibujo.agregarTramo(new Tramo(posicionX, posicionY, lapizLenvantado));
     }
 
-    public void bajar(Dibujo unDibujo){
+    public void bajar(){
         posicionY--;
-        unDibujo.agregarTramo(new Tramo(posicionX, posicionY, lapizLenvantado));
     }
 
     public int getPosicionX(){

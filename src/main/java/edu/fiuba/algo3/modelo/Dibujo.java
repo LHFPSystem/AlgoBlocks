@@ -9,16 +9,21 @@ public class Dibujo {
 
     public Dibujo() {
         tramos = new ArrayList<Tramo>();
+
+    }
+
+    public void agregarTramo(Personaje unPersonaje) {
+        Tramo unTramo = new Tramo(unPersonaje.getPosicionX(),
+                unPersonaje.getPosicionY(), unPersonaje.estaElLapizLevantado());
+        this.tramos.add(unTramo);
         iter = this.tramos.iterator();
     }
 
-    public void agregarTramo(Tramo unTramo) {
-        this.tramos.add(unTramo);
-    }
-
-    public Tramo mostrarTramo() {
+    public Tramo mostrarTramoYAvanzarAlSiguiente() {
         if (iter.hasNext()) {
             return iter.next();
         }
+
+        return new Tramo(0, 0, false);
     }
 }

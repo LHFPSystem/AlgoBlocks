@@ -10,32 +10,25 @@ public class PersonajeTest {
 
     @Test
     public void test01SeCreaPersonajeConLapizLevantado(){
-
         Personaje personaje = new Personaje();
 
         assertEquals(personaje.estaElLapizLevantado(),true);
-
-
     }
 
     @Test
     public void test02PersonajeBajaElLapiz(){
-
         Personaje personaje = new Personaje();
 
         personaje.bajarLapiz();
 
         assertEquals(personaje.estaElLapizLevantado(),false);
-
     }
 
     @Test
     public void test03PersonajeBajaYsubeElLapiz(){
-
         Personaje personaje = new Personaje();
 
         personaje.bajarLapiz();
-
         personaje.levantarLapiz();
 
         assertEquals(personaje.estaElLapizLevantado(),true);
@@ -45,9 +38,9 @@ public class PersonajeTest {
     public void test04PersonajeSeMueveUnaPosicionAlaDerecha(){
         Personaje personaje = new Personaje();
 
-        Dibujo dibujo = new Dibujo();
+//        Dibujo dibujo = new Dibujo();
 
-        personaje.moverDerecha(dibujo);
+        personaje.moverDerecha();
 
         assertEquals(personaje.getPosicionX(),1);
     }
@@ -56,9 +49,9 @@ public class PersonajeTest {
     public void test05PersonajeSeMueveUnaPosicionAlaIzquierda(){
         Personaje personaje = new Personaje();
 
-        Dibujo dibujo = new Dibujo();
+//        Dibujo dibujo = new Dibujo();
 
-        personaje.moverIzquierda(dibujo);
+        personaje.moverIzquierda();
 
         assertEquals(personaje.getPosicionX(),-1);
     }
@@ -67,9 +60,9 @@ public class PersonajeTest {
     public void test06PersonajeSubeUnaPosicion(){
         Personaje personaje = new Personaje();
 
-        Dibujo dibujo = new Dibujo();
+//        Dibujo dibujo = new Dibujo();
 
-        personaje.subir(dibujo);
+        personaje.subir();
 
         assertEquals(personaje.getPosicionY(),1);
     }
@@ -78,9 +71,9 @@ public class PersonajeTest {
     public void test07PersonajeBajaUnaPosicion(){
         Personaje personaje = new Personaje();
 
-        Dibujo dibujo = new Dibujo();
+//        Dibujo dibujo = new Dibujo();
 
-        personaje.bajar(dibujo);
+        personaje.bajar();
 
         assertEquals(personaje.getPosicionY(),-1);
     }
