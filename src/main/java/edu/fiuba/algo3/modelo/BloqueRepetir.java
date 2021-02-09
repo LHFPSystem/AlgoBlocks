@@ -8,6 +8,10 @@ public class BloqueRepetir implements Bloque {
     ArrayList<Bloque> listaBloques = new ArrayList<>();
 
     public void establecerCantidadRepeticiones(int n) {
+        if (n <= 0) {
+            throw new RuntimeException("Cantidad de repeticiones debe ser >= 1.");
+        }
+
         this.cantidadRepeticiones = n;
     }
 

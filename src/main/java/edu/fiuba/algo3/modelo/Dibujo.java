@@ -19,11 +19,15 @@ public class Dibujo {
     }
 
     public Tramo mostrarTramoYAvanzarAlSiguiente() {
+        if (tramos.isEmpty()) {
+            throw new RuntimeException("No hay dibujo.");
+        }
 
         if (iter.hasNext()) {
             return iter.next();
         }
 
-        return new Tramo(0, 0, false);
+        throw new RuntimeException("Se ha recorrido todo el dibujo.");
+//        return new Tramo(0, 0, false);
     }
 }

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tablero {
-
     List<Bloque> bloques = new ArrayList<Bloque>();
     Personaje unPersonaje = new Personaje();
 
@@ -16,9 +15,7 @@ public class Tablero {
     void ejecutarAlgoritmo(){
 
         for (Bloque bloque : bloques) {
-
             bloque.ejecutar(unPersonaje);
-
         }
     }
 }

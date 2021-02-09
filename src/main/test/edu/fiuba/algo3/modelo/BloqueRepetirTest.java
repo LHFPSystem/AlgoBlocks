@@ -67,4 +67,15 @@ public class BloqueRepetirTest {
         assertEquals(unPersonaje.getPosicionX(), -2);
         assertEquals(unPersonaje.getPosicionY(), -2);
     }
+
+    @Test
+    public void test06CantidadDeRepeticionesMenorAUnoDebeLanzarExcepcion() {
+        BloqueRepetir unBloque = new BloqueRepetir();
+
+        try {
+            unBloque.establecerCantidadRepeticiones(0);
+        } catch (RuntimeException e) {
+            assertEquals("Cantidad de repeticiones debe ser >= 1.", e.getMessage());
+        }
+    }
 }
