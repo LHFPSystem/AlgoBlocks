@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tablero {
-    List<Bloque> bloques = new ArrayList<Bloque>();
+    List<Bloque> bloques = new ArrayList<>();
     Personaje unPersonaje = new Personaje();
 
     public void setBloque(Bloque unBloque){
