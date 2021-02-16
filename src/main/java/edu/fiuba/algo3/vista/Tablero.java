@@ -18,7 +18,7 @@ import javafx.scene.layout.VBox;
 public class Tablero {
     HBox tablero = new HBox();
 
-    Tablero() {
+    public Tablero() {
         VistaSectorDibujo sectorDibujo = new VistaSectorDibujo();
         Separator separadorDibujoAuxiliar = new Separator(Orientation.HORIZONTAL);        
         VistaAuxiliar sectorAuxiliar = new VistaAuxiliar();
@@ -44,7 +44,7 @@ public class Tablero {
         tablero.getChildren().add(sectorAlgoritmo.getVista());
     }
 
-    HBox getTablero() {
+    public HBox getTablero() {
         return tablero;
     }
 }
