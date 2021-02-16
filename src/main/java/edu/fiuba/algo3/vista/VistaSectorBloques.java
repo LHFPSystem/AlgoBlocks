@@ -37,6 +37,11 @@ public class VistaSectorBloques {
         vistaBloques.setMargin(bloqueArriba.getVista(), new Insets(10, 10, 10, 10));
         vistaBloques.getChildren().add(bloqueArriba.getVista());
 
+        VistaBloqueAbajo bloqueAbajo = new VistaBloqueAbajo();
+        agregarCapacidadCopiar(bloqueAbajo.getVista());
+        vistaBloques.setMargin(bloqueAbajo.getVista(), new Insets(10, 10, 10, 10));
+        vistaBloques.getChildren().add(bloqueAbajo.getVista());
+
         VistaBloqueDerecha bloqueDerecha = new VistaBloqueDerecha();
         agregarCapacidadCopiar(bloqueDerecha.getVista());
         vistaBloques.setMargin(bloqueDerecha.getVista(), new Insets(10, 10, 10, 10));
