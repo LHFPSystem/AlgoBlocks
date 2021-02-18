@@ -16,19 +16,28 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 public class VistaAuxiliar {
-    VBox vistaAuxiliar = new VBox();
+    HBox vistaAuxiliar = new HBox();
 
     VistaAuxiliar() {
         vistaAuxiliar.setPrefWidth(400);
         vistaAuxiliar.setPrefHeight(400);
         vistaAuxiliar.setStyle("-fx-border-color: brown;");
 
-        Label nombreVista = new Label("Dibujo");
-        vistaAuxiliar.setMargin(nombreVista, new Insets(10, 10, 10, 10));
-        vistaAuxiliar.getChildren().add(nombreVista);
+        //Label nombreVista = new Label("Dibujo");
+        //vistaAuxiliar.setMargin(nombreVista, new Insets(10, 10, 10, 10));
+        //vistaAuxiliar.getChildren().add(nombreVista);
+
+        Button ResetButton = new Button("Reset");
+        vistaAuxiliar.getChildren().add(ResetButton);
+
+        Slider SpeedSlider = new Slider(0, 10, 5);
+        vistaAuxiliar.getChildren().add(SpeedSlider);
+
+        Button FinishButton = new Button("Finish");
+        vistaAuxiliar.getChildren().add(FinishButton);
     }
 
-    VBox getVista() {
+    HBox getVista() {
         return vistaAuxiliar;
     }
 }

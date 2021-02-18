@@ -27,4 +27,41 @@ public class BloqueAlgoritmoPersonalizadoTest {
         assertEquals(unPersonaje.getPosicionX(), -1);
         assertEquals(unPersonaje.getPosicionY(), -1);
     }
+
+    @Test
+    public void test03SeCreaAlgoritmoPersonalizadoDentroDeOtro() {
+        BloqueAlgoritmoPersonalizado unBloqueInterior = new BloqueAlgoritmoPersonalizado();
+        BloqueAlgoritmoPersonalizado unBloqueExterior = new BloqueAlgoritmoPersonalizado();
+        Personaje unPersonaje = new Personaje();
+
+        unBloqueInterior.agregarBloque(0, new BloqueMoverAbajo());
+        unBloqueInterior.agregarBloque(0, new BloqueMoverIzquierda());
+        unBloqueExterior.agregarBloque(0, new BloqueMoverDerecha());
+        unBloqueExterior.agregarBloque(0, new BloqueMoverArriba());
+        unBloqueExterior.agregarBloque(0, unBloqueInterior);
+        unBloqueExterior.ejecutar(unPersonaje);
+
+        assertEquals(unPersonaje.getPosicionX(), 0);
+        assertEquals(unPersonaje.getPosicionY(), 0);
+    }
+
+    @Test
+    public void test04SeCreaBloqueRepeticionDentroDeAlgoritmoPersonalizado() {
+        BloqueRepetir unBloqueInterior = new BloqueRepetir();
+        BloqueAlgoritmoPersonalizado unBloqueExterior = new BloqueAlgoritmoPersonalizado();
+        Personaje unPersonaje = new Personaje();
+
+        unBloqueInterior.establecerCantidadRepeticiones(3);
+
+        unBloqueInterior.agregarBloque(0, new BloqueMoverAbajo());
+        unBloqueInterior.agregarBloque(0, new BloqueMoverIzquierda());
+        unBloqueExterior.agregarBloque(0, new BloqueMoverDerecha());
+        unBloqueExterior.agregarBloque(0, new BloqueMoverArriba());
+        unBloqueExterior.agregarBloque(0, unBloqueInterior);
+        unBloqueExterior.ejecutar(unPersonaje);
+
+        assertEquals(unPersonaje.getPosicionX(), -2);
+        assertEquals(unPersonaje.getPosicionY(), -2);
+    }
+
 }
