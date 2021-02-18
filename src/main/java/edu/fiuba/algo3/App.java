@@ -2,6 +2,7 @@ package edu.fiuba.algo3;
 
 import edu.fiuba.algo3.vista.Tablero;
 import javafx.application.Application;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
@@ -12,6 +13,7 @@ import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
+import java.io.File;
 import java.util.Stack;
 
 /**
@@ -29,25 +31,27 @@ public class App extends Application {
 
         primaryStage.setTitle("AlgoBlocks");
         Button botonJugar = new Button("Comenzar juego");
+
         botonJugar.setOnAction(e -> ventana.setScene(escenaDos));
 
         //Layout 1
 
         StackPane layoutUno = new StackPane();
+        Image image = new Image("https://i.imgur.com/Xx0CFYB.jpg");
 
-        Image image = new Image("file:BackgroundTitl.jpg");
-        ImageView mv = new ImageView();
-        mv.setImage(image);
+        ImageView mv = new ImageView(image);
+        mv.fitWidthProperty().bind(primaryStage.widthProperty());
         mv.setPreserveRatio(true);
-        mv.setFitWidth(300);
 
+        layoutUno.getChildren().addAll(mv);
         layoutUno.getChildren().add(botonJugar);
+        botonJugar.setTranslateY(100);
+        botonJugar.setTranslateX(50);
+        System.out.println(botonJugar.getTranslateX());
+
+
 
         escenaUno = new Scene(layoutUno,1024,768);
-
-        // Button 2
-        Button botonVolver = new Button("Volver");
-        botonVolver.setOnAction(e -> ventana.setScene(escenaUno));
 
         //Layout 2
 
