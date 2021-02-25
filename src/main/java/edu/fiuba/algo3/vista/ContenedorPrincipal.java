@@ -11,12 +11,12 @@ public class ContenedorPrincipal extends BorderPane {
 
     public ContenedorPrincipal(Stage stage, Tablero tablero) {
 
-        this.setVistaSectorBloques(stage);
+        this.setVistaSectorBloques();
 
     }
 
 
-    private void setVistaSectorBloques(Stage stage){
+    private void setVistaSectorBloques(){
 
         this.setLeft(this.vistaSectorBloques.getVista());
 
