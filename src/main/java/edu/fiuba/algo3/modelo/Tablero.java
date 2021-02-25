@@ -8,10 +8,8 @@ public class Tablero {
     List<Bloque> bloques = new ArrayList<>();
     Personaje unPersonaje;
 
-    public Tablero(){
-
-        this.unPersonaje = new Personaje();
-
+    public Tablero(Personaje personaje){
+        this.unPersonaje = personaje;
     }
 
     public void setBloque(Bloque unBloque){
