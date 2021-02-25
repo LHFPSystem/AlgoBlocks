@@ -51,6 +51,8 @@ public class VistaSectorBloques {
         agregarCapacidadCopiar(bloqueIzquierda.getVista());
         vistaBloques.setMargin(bloqueIzquierda.getVista(), new Insets(10, 10, 10, 10));
         vistaBloques.getChildren().add(bloqueIzquierda.getVista());
+
+
     }
 
     VBox getVista() {

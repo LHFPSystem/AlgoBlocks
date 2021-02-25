@@ -6,7 +6,13 @@ import java.util.List;
 
 public class Tablero {
     List<Bloque> bloques = new ArrayList<>();
-    Personaje unPersonaje = new Personaje();
+    Personaje unPersonaje;
+
+    public Tablero(){
+
+        this.unPersonaje = new Personaje();
+
+    }
 
     public void setBloque(Bloque unBloque){
         bloques.add(unBloque);
