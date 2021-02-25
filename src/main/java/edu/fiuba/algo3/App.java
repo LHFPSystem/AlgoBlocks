@@ -1,6 +1,9 @@
 package edu.fiuba.algo3;
 
-import edu.fiuba.algo3.vista.Tablero;
+import edu.fiuba.algo3.vista.ContenedorBienvenidos;
+import edu.fiuba.algo3.vista.ContenedorPrincipal;
+import edu.fiuba.algo3.modelo.Tablero;
+//import edu.fiuba.algo3.vista.Tablero;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -21,13 +24,29 @@ import java.util.Stack;
  */
 public class App extends Application {
 
-    Stage ventana;
-    Scene escenaUno,escenaDos;
+    //Stage ventana;
+    //Scene escenaUno,escenaDos;
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws Exception {
 
-        ventana = primaryStage;
+    primaryStage.setTitle("AlgoBlocks");
+
+    Tablero tablero = this.crearTablero();
+
+    ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(primaryStage, tablero);
+
+    Scene escenaJuego = new Scene(contenedorPrincipal, 800.0D, 600.0D);
+
+    ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(primaryStage, escenaJuego);
+
+    Scene escenaBienvenidos = new Scene(contenedorBienvenidos, 1024.0D, 768.0D);
+    primaryStage.setScene(escenaBienvenidos);
+    //primaryStage.setFullScreen(true);
+    primaryStage.show();
+
+
+        /*ventana = primaryStage;
 
         primaryStage.setTitle("AlgoBlocks");
         Button botonJugar = new Button("Comenzar juego");
@@ -65,7 +84,13 @@ public class App extends Application {
         ventana.show();
 
 
+*/
+    }
 
+    private Tablero crearTablero(){
+        Tablero tablero = new Tablero();
+
+        return tablero;
     }
 
     public static void main(String[] args) {
