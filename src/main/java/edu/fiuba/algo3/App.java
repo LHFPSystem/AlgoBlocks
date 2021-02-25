@@ -1,5 +1,6 @@
 package edu.fiuba.algo3;
 
+import edu.fiuba.algo3.modelo.Personaje;
 import edu.fiuba.algo3.vista.ContenedorBienvenidos;
 import edu.fiuba.algo3.vista.ContenedorPrincipal;
 import edu.fiuba.algo3.modelo.Tablero;
@@ -88,7 +89,8 @@ public class App extends Application {
     }
 
     private Tablero crearTablero(){
-        Tablero tablero = new Tablero();
+        Personaje unPersonaje = new Personaje();
+        Tablero tablero = new Tablero(unPersonaje);
 
         return tablero;
     }
