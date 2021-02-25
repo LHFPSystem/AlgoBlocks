@@ -56,7 +56,6 @@ public class VistaSectorBloques {
     VBox getVista() {
         return vistaBloques;
     }
-
     public void agregarCapacidadCopiar(HBox bloque) {
         bloque.setOnDragDetected(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
