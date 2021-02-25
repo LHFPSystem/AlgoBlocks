@@ -21,6 +21,7 @@ public class Tablero {
 
         for (Bloque bloque : bloques) {
             bloque.ejecutar(unPersonaje);
+            this.dibujo.agregarTramo(unPersonaje);
         }
     }
 }
