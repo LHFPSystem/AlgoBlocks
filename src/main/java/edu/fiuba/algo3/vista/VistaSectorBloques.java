@@ -32,7 +32,13 @@ public class VistaSectorBloques {
         vistaBloques.setMargin(nombreVista, new Insets(10, 10, 10, 10));
         vistaBloques.getChildren().add(nombreVista);
 
-        VistaBloqueArriba bloqueArriba = new VistaBloqueArriba();
+        Button botonBloqueArriba = new Button();
+        botonBloqueArriba.setText("Arriba");
+
+        vistaBloques.getChildren().add(botonBloqueArriba);
+
+
+        /*VistaBloqueArriba bloqueArriba = new VistaBloqueArriba();
         agregarCapacidadCopiar(bloqueArriba.getVista());
         vistaBloques.setMargin(bloqueArriba.getVista(), new Insets(10, 10, 10, 10));
         vistaBloques.getChildren().add(bloqueArriba.getVista());
@@ -52,13 +58,13 @@ public class VistaSectorBloques {
         vistaBloques.setMargin(bloqueIzquierda.getVista(), new Insets(10, 10, 10, 10));
         vistaBloques.getChildren().add(bloqueIzquierda.getVista());
 
-
+    */
     }
 
     VBox getVista() {
         return vistaBloques;
     }
-    public void agregarCapacidadCopiar(HBox bloque) {
+    /*public void agregarCapacidadCopiar(HBox bloque) {
         bloque.setOnDragDetected(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
                 Dragboard db = bloque.startDragAndDrop(TransferMode.COPY);
@@ -100,5 +106,5 @@ public class VistaSectorBloques {
                 event.consume();
             }
         }); 
-    }
+    }*/
 }

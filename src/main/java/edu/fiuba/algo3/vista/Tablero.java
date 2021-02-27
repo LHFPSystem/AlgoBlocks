@@ -40,7 +40,7 @@ public class Tablero {
         tablero.getChildren().add(separadorBloquesAlgoritmo);
 
         VistaSectorAlgoritmo sectorAlgoritmo = new VistaSectorAlgoritmo();
-        sectorBloques.agregarCapacidadPegado(sectorAlgoritmo.getVista());
+        //sectorBloques.agregarCapacidadPegado(sectorAlgoritmo.getVista());
         tablero.getChildren().add(sectorAlgoritmo.getVista());
     }
 
