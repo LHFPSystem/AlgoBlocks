@@ -57,4 +57,5 @@ public class DibujoTest {
             assertEquals("Se ha recorrido todo el dibujo.", e.getMessage());
         }
     }
+
 }
