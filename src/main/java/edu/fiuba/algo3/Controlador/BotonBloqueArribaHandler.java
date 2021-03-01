@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.vista.eventos;
+package edu.fiuba.algo3.Controlador;
 
 import edu.fiuba.algo3.modelo.BloqueMoverArriba;
 import edu.fiuba.algo3.modelo.Tablero;

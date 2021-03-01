@@ -1,6 +1,9 @@
 package edu.fiuba.algo3.vista;
 
-import edu.fiuba.algo3.vista.eventos.*;
+import edu.fiuba.algo3.Controlador.BotonBloqueAbajoHandler;
+import edu.fiuba.algo3.Controlador.BotonBloqueArribaHandler;
+import edu.fiuba.algo3.Controlador.BotonBloqueDerechaHandler;
+import edu.fiuba.algo3.Controlador.BotonBloqueIzquierdaHandler;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
