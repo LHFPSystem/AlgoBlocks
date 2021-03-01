@@ -24,4 +24,8 @@ public class Tablero {
             this.dibujo.agregarTramo(unPersonaje);
         }
     }
+
+    public Dibujo getDibujo(){
+        return this.dibujo;
+    }
 }
