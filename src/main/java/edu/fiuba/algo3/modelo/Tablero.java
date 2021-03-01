@@ -11,7 +11,6 @@ public class Tablero {
 
     public Tablero(Personaje personaje){
         this.unPersonaje = personaje;
-        dibujo.agregarTramo(unPersonaje);
     }
 
     public void setBloque(Bloque unBloque){

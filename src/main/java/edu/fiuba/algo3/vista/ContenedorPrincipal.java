@@ -8,6 +8,7 @@ import edu.fiuba.algo3.Controlador.BotonEjecutarHandler;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -24,6 +25,7 @@ public class ContenedorPrincipal extends BorderPane {
 
     VBox vistaSectorAlgoritmo = new VBox();
     VBox vistaSectorDibujo = new VBox();
+    Canvas canvas;
 
 
     public ContenedorPrincipal(Stage stage, Tablero tablero) {
@@ -79,10 +81,11 @@ public class ContenedorPrincipal extends BorderPane {
 
     private void setVistaSectorDibujo(Tablero tablero){
 
-        Button botonEjecutarAlgoritmo = new Button("Ejecutar Algorimo");
-        BotonEjecutarHandler botonEjecutarHandler = new BotonEjecutarHandler(tablero, vistaSectorDibujo);
-        botonEjecutarAlgoritmo.setOnAction(botonEjecutarHandler);
+        this.canvas = new Canvas(200,200);
 
+        Button botonEjecutarAlgoritmo = new Button("Ejecutar Algorimo");
+        BotonEjecutarHandler botonEjecutarHandler = new BotonEjecutarHandler(tablero, vistaSectorDibujo, this.canvas);
+        botonEjecutarAlgoritmo.setOnAction(botonEjecutarHandler);
 
         vistaSectorDibujo.setSpacing(10.0D);
         vistaSectorDibujo.setPadding(new Insets(15.0D));
@@ -94,6 +97,7 @@ public class ContenedorPrincipal extends BorderPane {
         vistaSectorDibujo.setMargin(nombreVista, new Insets(10, 10, 10, 10));
         vistaSectorDibujo.getChildren().add(nombreVista);
         vistaSectorDibujo.getChildren().add(botonEjecutarAlgoritmo);
+        vistaSectorDibujo.getChildren().add(this.canvas);
         this.setRight(vistaSectorDibujo);
     }
 
