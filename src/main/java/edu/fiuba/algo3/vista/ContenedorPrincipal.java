@@ -9,10 +9,12 @@ import edu.fiuba.algo3.modelo.Tablero;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +54,6 @@ public class ContenedorPrincipal extends BorderPane {
         Button botonBloqueIzquierda = new Button("Izquierda");
         BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler = new BotonBloqueIzquierdaHandler(tablero, vistaSectorAlgoritmo);
         botonBloqueIzquierda.setOnAction(botonBloqueIzquierdaHandler);
-
 
         VBox sectorBloques = new VBox(new Node[]{nombreVista, botonBloqueArriba, botonBloqueAbajo, botonBloqueDerecha, botonBloqueIzquierda});
         sectorBloques.setSpacing(10.0D);
