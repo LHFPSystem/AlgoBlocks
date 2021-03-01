@@ -4,6 +4,7 @@ import edu.fiuba.algo3.Controlador.BotonBloqueAbajoHandler;
 import edu.fiuba.algo3.Controlador.BotonBloqueArribaHandler;
 import edu.fiuba.algo3.Controlador.BotonBloqueDerechaHandler;
 import edu.fiuba.algo3.Controlador.BotonBloqueIzquierdaHandler;
+import edu.fiuba.algo3.Controlador.BotonEjecutarHandler;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -27,14 +28,12 @@ public class ContenedorPrincipal extends BorderPane {
 
         this.setVistaSectorBloques(tablero, vistaSectorAlgoritmo);
         this.setVistaSectorAlgoritmo();
-        this.setVistaSectorDibujo();
+        this.setVistaSectorDibujo(tablero);
 
     }
 
 
     private void setVistaSectorBloques(Tablero tablero, VBox vistaSectorAlgoritmo){
-
-        List<String> bloques = new ArrayList<>();
 
         Label nombreVista = new Label("Bloques");
 
@@ -77,9 +76,11 @@ public class ContenedorPrincipal extends BorderPane {
         this.setCenter(vistaSectorAlgoritmo);
     }
 
-    private void setVistaSectorDibujo(){
+    private void setVistaSectorDibujo(Tablero tablero){
 
         Button botonEjecutarAlgoritmo = new Button("Ejecutar Algorimo");
+        BotonEjecutarHandler botonEjecutarHandler = new BotonEjecutarHandler(tablero, vistaSectorDibujo);
+        botonEjecutarAlgoritmo.setOnAction(botonEjecutarHandler);
 
 
         vistaSectorDibujo.setSpacing(10.0D);

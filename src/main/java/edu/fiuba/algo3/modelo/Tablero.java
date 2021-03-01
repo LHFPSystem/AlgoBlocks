@@ -17,7 +17,7 @@ public class Tablero {
         bloques.add(unBloque);
     }
 
-    void ejecutarAlgoritmo(){
+    public void ejecutarAlgoritmo(){
 
         for (Bloque bloque : bloques) {
             bloque.ejecutar(unPersonaje);
