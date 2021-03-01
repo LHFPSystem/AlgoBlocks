@@ -68,6 +68,11 @@ public class ContenedorPrincipal extends BorderPane {
 
     private void setVistaSectorDibujo(){
 
+        Button botonEjecutarAlgoritmo = new Button("Ejecutar Algorimo");
+
+
+        vistaSectorDibujo.setSpacing(10.0D);
+        vistaSectorDibujo.setPadding(new Insets(15.0D));
         vistaSectorDibujo.setPrefWidth(400);
         vistaSectorDibujo.setPrefHeight(400);
         vistaSectorDibujo.setStyle("-fx-border-color: brown;");
@@ -75,6 +80,7 @@ public class ContenedorPrincipal extends BorderPane {
         Label nombreVista = new Label("Dibujo");
         vistaSectorDibujo.setMargin(nombreVista, new Insets(10, 10, 10, 10));
         vistaSectorDibujo.getChildren().add(nombreVista);
+        vistaSectorDibujo.getChildren().add(botonEjecutarAlgoritmo);
         this.setRight(vistaSectorDibujo);
     }
 
