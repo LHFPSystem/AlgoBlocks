@@ -7,7 +7,8 @@ public class BloqueRepetirTest {
     @Test
     public void test01seRepiteElBloqueUnaUnicaVezConUnSoloBloqueInterno() {
         BloqueRepetir unBloque = new BloqueRepetir();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         unBloque.establecerCantidadRepeticiones(1);
         unBloque.agregarBloque(0, new BloqueMoverDerecha());
@@ -19,7 +20,8 @@ public class BloqueRepetirTest {
     @Test
     public void test02seRepiteElBloqueDosVecesConUnSoloBloqueInterno() {
         BloqueRepetir unBloque = new BloqueRepetir();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         unBloque.establecerCantidadRepeticiones(2);
         unBloque.agregarBloque(0, new BloqueMoverDerecha());
@@ -31,7 +33,8 @@ public class BloqueRepetirTest {
     @Test
     public void test03seRepiteElBloqueTresVecesConUnSoloBloqueInterno() {
         BloqueRepetir unBloque = new BloqueRepetir();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         unBloque.establecerCantidadRepeticiones(3);
         unBloque.agregarBloque(0, new BloqueMoverDerecha());
@@ -43,7 +46,8 @@ public class BloqueRepetirTest {
     @Test
     public void test04seRepiteElBloqueDosVecesConDosBloquesInternos() {
         BloqueRepetir unBloque = new BloqueRepetir();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         unBloque.establecerCantidadRepeticiones(2);
         unBloque.agregarBloque(0, new BloqueMoverDerecha());
@@ -57,7 +61,8 @@ public class BloqueRepetirTest {
     @Test
     public void test05seRepiteElBloqueTresVecesConDosBloquesInternos() {
         BloqueRepetir unBloque = new BloqueRepetir();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         unBloque.establecerCantidadRepeticiones(2);
         unBloque.agregarBloque(0, new BloqueMoverIzquierda());

@@ -8,7 +8,8 @@ public class BloqueMoverArribaTest {
 
     @Test
     public void test01BloqueMoverArribaHaceQueElPersonajesSubaUnaPosicion(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
         Bloque bloqueArriba = new BloqueMoverArriba();
 
         bloqueArriba.ejecutar(personaje);

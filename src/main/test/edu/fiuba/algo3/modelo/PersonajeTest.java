@@ -6,14 +6,16 @@ public class PersonajeTest {
 
     @Test
     public void test01SeCreaPersonajeConLapizLevantado(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
 
         assertTrue(personaje.estaElLapizLevantado());
     }
 
     @Test
     public void test02PersonajeBajaElLapiz(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
 
         personaje.bajarLapiz();
 
@@ -22,7 +24,8 @@ public class PersonajeTest {
 
     @Test
     public void test03PersonajeBajaYsubeElLapiz(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
 
         personaje.bajarLapiz();
         personaje.levantarLapiz();
@@ -32,7 +35,8 @@ public class PersonajeTest {
 
     @Test
     public void test04PersonajeSeMueveUnaPosicionAlaDerecha(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
 
         personaje.moverDerecha();
 
@@ -41,7 +45,8 @@ public class PersonajeTest {
 
     @Test
     public void test05PersonajeSeMueveUnaPosicionAlaIzquierda(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
 
         personaje.moverIzquierda();
 
@@ -50,7 +55,8 @@ public class PersonajeTest {
 
     @Test
     public void test06PersonajeSubeUnaPosicion(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
 
         personaje.subir();
 
@@ -59,7 +65,8 @@ public class PersonajeTest {
 
     @Test
     public void test07PersonajeBajaUnaPosicion(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
 
         personaje.bajar();
 

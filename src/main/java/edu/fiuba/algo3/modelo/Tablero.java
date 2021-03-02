@@ -6,12 +6,8 @@ import java.util.List;
 
 public class Tablero {
     List<Bloque> bloques = new ArrayList<>();
-    Personaje unPersonaje;
     Dibujo dibujo = new Dibujo();
-
-    public Tablero(Personaje personaje){
-        this.unPersonaje = personaje;
-    }
+    Personaje unPersonaje = new Personaje(dibujo);
 
     public void setBloque(Bloque unBloque){
         bloques.add(unBloque);
@@ -21,7 +17,6 @@ public class Tablero {
 
         for (Bloque bloque : bloques) {
             bloque.ejecutar(unPersonaje);
-            this.dibujo.agregarTramo(unPersonaje);
         }
     }
 

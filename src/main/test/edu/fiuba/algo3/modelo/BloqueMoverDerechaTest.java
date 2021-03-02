@@ -7,7 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BloqueMoverDerechaTest {
     @Test
     public void test01BloqueMoverDerechaMueveAlPersonajeUnaPosicionALaDerecha(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
         Bloque bloqueDerecha = new BloqueMoverDerecha();
 
         bloqueDerecha.ejecutar(personaje);

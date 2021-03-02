@@ -32,8 +32,10 @@ public class BotonEjecutarHandler implements EventHandler<ActionEvent> {
         tramoFinal = this.ajustarCoordenadas(tramoFinal);
 
         while(tramoFinal != null){
-            canvas.getGraphicsContext2D().strokeLine(tramoInical.obtenerPosicionX(),tramoInical.obtenerPosicionY(),
-                    tramoFinal.obtenerPosicionX(),tramoFinal.obtenerPosicionY());
+            if (tramoFinal.estaElLapizLevantado() == false) {
+                canvas.getGraphicsContext2D().strokeLine(tramoInical.obtenerPosicionX(), tramoInical.obtenerPosicionY(),
+                        tramoFinal.obtenerPosicionX(), tramoFinal.obtenerPosicionY());
+            }
             tramoInical = tramoFinal;
             tramoFinal = dibujo.mostrarTramoYAvanzarAlSiguiente();
             if(tramoFinal != null){

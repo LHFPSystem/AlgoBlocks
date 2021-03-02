@@ -6,7 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BloqueLapizArribaTest {
     @Test
     public void test01PersonajeSubeElLapizConElBloqueLapizArriba(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
         Bloque bloqueSubirLapiz = new BloqueLapizArriba();
 
         bloqueSubirLapiz.ejecutar(personaje);

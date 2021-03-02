@@ -7,7 +7,8 @@ public class BloqueMoverAbajoTest {
 
     @Test
     public void test01BloqueMoverAbajoHaceQueElPersonajesBajeUnaPosicion(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
         Bloque bloqueAbajo = new BloqueMoverAbajo();
 
         bloqueAbajo.ejecutar(personaje);

@@ -8,7 +8,8 @@ public class BloqueInvertirTest {
     @Test
     public void test01seInvierteElComportamientoDelBloqueMoverDerecha() {
         BloqueInvertir unBloque = new BloqueInvertir();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         unBloque.agregarBloque(0, new BloqueMoverDerecha());
         unBloque.ejecutar(unPersonaje);
@@ -19,7 +20,8 @@ public class BloqueInvertirTest {
     @Test
     public void test02seInvierteElComportamientoDelBloqueMoverIzquierda() {
         BloqueInvertir unBloque = new BloqueInvertir();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         unBloque.agregarBloque(0, new BloqueMoverIzquierda());
         unBloque.ejecutar(unPersonaje);
@@ -30,7 +32,8 @@ public class BloqueInvertirTest {
     @Test
     public void test03seInvierteElComportamientoDelBloqueMoverArriba() {
         BloqueInvertir unBloque = new BloqueInvertir();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         unBloque.agregarBloque(0, new BloqueMoverArriba());
         unBloque.ejecutar(unPersonaje);
@@ -41,7 +44,8 @@ public class BloqueInvertirTest {
     @Test
     public void test04seInvierteElComportamientoDelBloqueMoverAbajo() {
         BloqueInvertir unBloque = new BloqueInvertir();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         unBloque.agregarBloque(0, new BloqueMoverAbajo());
         unBloque.ejecutar(unPersonaje);
@@ -52,7 +56,8 @@ public class BloqueInvertirTest {
     @Test
     public void test05seInvierteElComportamientoDeDosBloquesDistintos() {
         BloqueInvertir unBloque = new BloqueInvertir();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         unBloque.agregarBloque(0, new BloqueMoverAbajo());
         unBloque.agregarBloque(1, new BloqueMoverIzquierda());
@@ -65,7 +70,8 @@ public class BloqueInvertirTest {
     @Test
     public void test06seInvierteElComportamientoDeDosBloquesIguales() {
         BloqueInvertir unBloque = new BloqueInvertir();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         unBloque.agregarBloque(0, new BloqueMoverAbajo());
         unBloque.agregarBloque(1, new BloqueMoverAbajo());

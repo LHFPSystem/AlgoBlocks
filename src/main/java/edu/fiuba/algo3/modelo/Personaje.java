@@ -5,6 +5,11 @@ public class Personaje {
     private int posicionX = 0;
     private int posicionY = 0;
     private boolean lapizLenvantado = true;
+    private Dibujo dibujo;
+
+    public Personaje(Dibujo dibujo) {
+        this.dibujo = dibujo;
+    }
 
     public void bajarLapiz(){
         this.lapizLenvantado = false;
@@ -20,18 +25,22 @@ public class Personaje {
 
     public void moverDerecha(){
         posicionX++;
+        dibujo.agregarTramo(this);
     }
 
     public void moverIzquierda(){
         posicionX--;
+        dibujo.agregarTramo(this);
     }
 
     public void subir(){
         posicionY++;
+        dibujo.agregarTramo(this);
     }
 
     public void bajar(){
         posicionY--;
+        dibujo.agregarTramo(this);
     }
 
     public int getPosicionX(){

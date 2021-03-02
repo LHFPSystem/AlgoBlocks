@@ -8,7 +8,7 @@ public class DibujoTest {
     public void test01seAgregaUnTramoAlMoverElPersonajeALaDerecha() {
         Dibujo unDibujo = new Dibujo();
         Bloque unBloque = new BloqueMoverDerecha();
-        Personaje unPersonaje = new Personaje();
+        Personaje unPersonaje = new Personaje(unDibujo);
 
         unBloque.ejecutar(unPersonaje);
         unDibujo.agregarTramo(unPersonaje);
@@ -21,7 +21,7 @@ public class DibujoTest {
     public void test02seAgregaUnTramoAlMoverElPersonajeHaciaAbajo() {
         Dibujo unDibujo = new Dibujo();
         Bloque unBloque = new BloqueMoverAbajo();
-        Personaje unPersonaje = new Personaje();
+        Personaje unPersonaje = new Personaje(unDibujo);
 
         unBloque.ejecutar(unPersonaje);
         unDibujo.agregarTramo(unPersonaje);
@@ -44,7 +44,7 @@ public class DibujoTest {
     public void test04SeTerminanLosTramosADibujarDebeLanzarExcepcion() {
         Dibujo unDibujo = new Dibujo();
         Bloque unBloque = new BloqueMoverAbajo();
-        Personaje unPersonaje = new Personaje();
+        Personaje unPersonaje = new Personaje(unDibujo);
 
         unBloque.ejecutar(unPersonaje);
         unDibujo.agregarTramo(unPersonaje);

@@ -7,7 +7,8 @@ public class TableroTest {
     @Test
     public void test01SeEjecutaUnAlgoritmoDeUnBloque() {
         BloqueAlgoritmoPersonalizado algoritmo = new BloqueAlgoritmoPersonalizado();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         algoritmo.agregarBloque(0, new BloqueMoverArriba());
         algoritmo.ejecutar(unPersonaje);
@@ -18,7 +19,8 @@ public class TableroTest {
     @Test
     public void test02SeEjecutaUnAlgoritmoConDosBLoques() {
         BloqueAlgoritmoPersonalizado algoritmo = new BloqueAlgoritmoPersonalizado();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         algoritmo.agregarBloque(0, new BloqueMoverArriba());
         algoritmo.agregarBloque(1, new BloqueMoverIzquierda());
@@ -32,8 +34,8 @@ public class TableroTest {
     public void test03SeEjecutaUnAlgoritmoConBLoquesCompuestos() {
         BloqueAlgoritmoPersonalizado algoritmo = new BloqueAlgoritmoPersonalizado();
         BloqueRepetir unBloqueRepetir = new BloqueRepetir();
-
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         algoritmo.agregarBloque(0, new BloqueMoverArriba());
         algoritmo.agregarBloque(1, new BloqueMoverIzquierda());

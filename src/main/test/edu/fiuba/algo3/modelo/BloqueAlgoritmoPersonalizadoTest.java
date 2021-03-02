@@ -7,7 +7,8 @@ public class BloqueAlgoritmoPersonalizadoTest {
     @Test
     public void test01SeCreaUnAlgoritmoPersonalizadoConUnSoloBloque() {
         BloqueAlgoritmoPersonalizado unBloque = new BloqueAlgoritmoPersonalizado();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         unBloque.agregarBloque(0, new BloqueMoverAbajo());
         unBloque.ejecutar(unPersonaje);
@@ -18,7 +19,8 @@ public class BloqueAlgoritmoPersonalizadoTest {
     @Test
     public void test02SeCreaUnAlgoritmoPersonalizadoConDosBloques() {
         BloqueAlgoritmoPersonalizado unBloque = new BloqueAlgoritmoPersonalizado();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         unBloque.agregarBloque(0, new BloqueMoverAbajo());
         unBloque.agregarBloque(0, new BloqueMoverIzquierda());
@@ -32,7 +34,8 @@ public class BloqueAlgoritmoPersonalizadoTest {
     public void test03SeCreaAlgoritmoPersonalizadoDentroDeOtro() {
         BloqueAlgoritmoPersonalizado unBloqueInterior = new BloqueAlgoritmoPersonalizado();
         BloqueAlgoritmoPersonalizado unBloqueExterior = new BloqueAlgoritmoPersonalizado();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         unBloqueInterior.agregarBloque(0, new BloqueMoverAbajo());
         unBloqueInterior.agregarBloque(0, new BloqueMoverIzquierda());
@@ -49,7 +52,8 @@ public class BloqueAlgoritmoPersonalizadoTest {
     public void test04SeCreaBloqueRepeticionDentroDeAlgoritmoPersonalizado() {
         BloqueRepetir unBloqueInterior = new BloqueRepetir();
         BloqueAlgoritmoPersonalizado unBloqueExterior = new BloqueAlgoritmoPersonalizado();
-        Personaje unPersonaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje unPersonaje = new Personaje(dibujo);
 
         unBloqueInterior.establecerCantidadRepeticiones(3);
 

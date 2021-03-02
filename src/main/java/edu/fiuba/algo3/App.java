@@ -89,8 +89,7 @@ public class App extends Application {
     }
 
     private Tablero crearTablero(){
-        Personaje unPersonaje = new Personaje();
-        Tablero tablero = new Tablero(unPersonaje);
+        Tablero tablero = new Tablero();
 
         return tablero;
     }

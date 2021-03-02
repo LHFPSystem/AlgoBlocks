@@ -6,7 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BloqueTest {
     @Test
     public void test01PersonjaseSeMueveIzquierdaLuegoDerechaVuelveAlOrigen(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
         Bloque bloqueMoverIzquierda = new BloqueMoverIzquierda();
         Bloque bloqueMoverDerecha = new BloqueMoverDerecha();
 
@@ -18,7 +19,8 @@ public class BloqueTest {
 
     @Test
     public void test02PersonjaseSeMueveArribaLuegoAbajoVuelveAlorigen(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
         Bloque bloqueMoverArriba = new BloqueMoverArriba();
         Bloque bloqueMoverAbajo = new BloqueMoverAbajo();
 
@@ -30,7 +32,8 @@ public class BloqueTest {
 
     @Test
     public void test03PersonjaseSeMueveIzquierdaYArriba(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
         Bloque bloqueMoverArriba = new BloqueMoverArriba();
         Bloque bloqueMoverIzquierda = new BloqueMoverIzquierda();
 
@@ -43,7 +46,8 @@ public class BloqueTest {
 
     @Test
     public void test04PersonjaseSeMueveIzquierdaYAbajo(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
         Bloque bloqueMoverAbajo = new BloqueMoverAbajo();
         Bloque bloqueMoverIzquierda = new BloqueMoverIzquierda();
 
@@ -56,7 +60,8 @@ public class BloqueTest {
 
     @Test
     public void test05PersonjaseSeMueveDerechaYArriba(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
         Bloque bloqueMoverArriba = new BloqueMoverArriba();
         Bloque bloqueMoverDerecha = new BloqueMoverDerecha();
 
@@ -69,7 +74,8 @@ public class BloqueTest {
 
     @Test
     public void test06PersonjaseSeMueveDerechaYAbajo(){
-        Personaje personaje = new Personaje();
+        Dibujo dibujo = new Dibujo();
+        Personaje personaje = new Personaje(dibujo);
         Bloque bloqueMoverAbajo = new BloqueMoverAbajo();
         Bloque bloqueMoverDerecha = new BloqueMoverDerecha();
 
