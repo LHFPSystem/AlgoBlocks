@@ -27,7 +27,7 @@ public class Dibujo {
             return iter.next();
         }
 
-        throw new RuntimeException("Se ha recorrido todo el dibujo.");
-//        return new Tramo(0, 0, false);
+        //throw new RuntimeException("Se ha recorrido todo el dibujo.");
+        return null;
     }
 }

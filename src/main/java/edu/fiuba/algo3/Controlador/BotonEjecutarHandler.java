@@ -25,5 +25,28 @@ public class BotonEjecutarHandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionEvent) {
         this.tablero.ejecutarAlgoritmo();
         dibujo = this.tablero.getDibujo();
+
+        Tramo tramoInical = new Tramo(0,0,true);
+        Tramo tramoFinal = dibujo.mostrarTramoYAvanzarAlSiguiente();
+        tramoInical = this.ajustarCoordenadas(tramoInical);
+        tramoFinal = this.ajustarCoordenadas(tramoFinal);
+
+        while(tramoFinal != null){
+            canvas.getGraphicsContext2D().strokeLine(tramoInical.obtenerPosicionX(),tramoInical.obtenerPosicionY(),
+                    tramoFinal.obtenerPosicionX(),tramoFinal.obtenerPosicionY());
+            tramoInical = tramoFinal;
+            tramoFinal = dibujo.mostrarTramoYAvanzarAlSiguiente();
+            if(tramoFinal != null){
+                tramoFinal = this.ajustarCoordenadas(tramoFinal);
+            }
+
+        }
+
     }
+
+    private Tramo ajustarCoordenadas(Tramo tramo){
+
+        return new Tramo((tramo.obtenerPosicionX()*50)+100,-(tramo.obtenerPosicionY()*50)+100,tramo.estaElLapizLevantado());
+    }
+
 }

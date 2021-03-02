@@ -57,7 +57,8 @@ public class ContenedorPrincipal extends BorderPane {
         BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler = new BotonBloqueIzquierdaHandler(tablero, vistaSectorAlgoritmo);
         botonBloqueIzquierda.setOnAction(botonBloqueIzquierdaHandler);
 
-        VBox sectorBloques = new VBox(new Node[]{nombreVista, botonBloqueArriba, botonBloqueAbajo, botonBloqueDerecha, botonBloqueIzquierda});
+        VBox sectorBloques = new VBox(new Node[]{nombreVista, botonBloqueArriba, botonBloqueAbajo,
+                botonBloqueDerecha, botonBloqueIzquierda});
         sectorBloques.setSpacing(10.0D);
         sectorBloques.setPadding(new Insets(15.0D));
         sectorBloques.setPrefWidth(400);
