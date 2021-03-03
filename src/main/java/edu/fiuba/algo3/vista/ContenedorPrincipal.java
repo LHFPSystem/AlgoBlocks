@@ -10,6 +10,8 @@ import edu.fiuba.algo3.Controlador.BotonEjecutarHandler;
 import edu.fiuba.algo3.Controlador.BotonGuardarAlgoritmoHandler;
 import edu.fiuba.algo3.Controlador.BotonLimpiarAlgoritmoHandler;
 import edu.fiuba.algo3.Controlador.BotonRepetirDosVecesHandler;
+import edu.fiuba.algo3.Controlador.BotonRepetirTresVecesHandler;
+import edu.fiuba.algo3.Controlador.BotonInvertirHandler;
 import edu.fiuba.algo3.Controlador.BotonListoRepetirDosVecesHandler;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.geometry.Insets;
@@ -122,8 +124,21 @@ public class ContenedorPrincipal extends BorderPane {
         botonGuardarAlgoritmo.setGraphic(imagenGuardarAlgoritmoView);
 
         Button botonRepetirDosVeces = new Button("Repetir dos veces");
-        BotonRepetirDosVecesHandler botonRepetirDosVecesHandler = new BotonRepetirDosVecesHandler(botonBloqueAbajo);
+        Button botonRepetirTresVeces = new Button("Repetir tres veces");
+        Button botonInvertir = new Button("Invertir");
+
+        BotonRepetirDosVecesHandler botonRepetirDosVecesHandler = new BotonRepetirDosVecesHandler(botonBloqueAbajo,
+                botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba);
+
+        BotonRepetirTresVecesHandler botonRepetirTresVecesHandler = new BotonRepetirTresVecesHandler(botonBloqueAbajo,
+                botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba);
+
+        BotonInvertirHandler botonInvertirHandler = new BotonInvertirHandler(botonBloqueAbajo,
+                botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba);
+
         botonRepetirDosVeces.setOnAction(botonRepetirDosVecesHandler);
+        botonRepetirTresVeces.setOnAction(botonRepetirTresVecesHandler);
+        botonInvertir.setOnAction(botonInvertirHandler);
 
         Button listoRepetirDosVeces = new Button("Finalizar Repetir Dos Veces");
 
