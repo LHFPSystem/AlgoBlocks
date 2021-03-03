@@ -28,8 +28,5 @@ public class BotonLimpiarAlgoritmoHandler implements EventHandler<ActionEvent> {
         this.sectorAlgoritmo.setMargin(nombreVista, new Insets(10, 10, 10, 10));
         this.sectorAlgoritmo.getChildren().add(nombreVista);
 
-
-
-
     }
 }

@@ -7,6 +7,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 public class BotonBloqueLapizAbajoHandler implements EventHandler<ActionEvent> {
@@ -20,10 +22,13 @@ public class BotonBloqueLapizAbajoHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        System.out.println("Lapiz Abajo");
+
         this.tablero.setBloque(new BloqueLapizAbajo());
-        Label labelLapizAbajo = new Label("Lapiz Abajo");
-        sectorAlgoritmo.setMargin(labelLapizAbajo, new Insets(10, 10, 10, 10));
-        sectorAlgoritmo.getChildren().add(labelLapizAbajo);
+        Image imagenLapizAbajo = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/personajeConLapizAbajo.jpg");
+        ImageView imagenLapizAbajoView = new ImageView(imagenLapizAbajo);
+        imagenLapizAbajoView.setFitWidth(60);
+        imagenLapizAbajoView.setFitHeight(55);
+        sectorAlgoritmo.setMargin(imagenLapizAbajoView, new Insets(10, 10, 10, 10));
+        sectorAlgoritmo.getChildren().add(imagenLapizAbajoView);
     }
 }
