@@ -14,6 +14,7 @@ public class BotonAlgoritmoPersonalizadoHandler implements EventHandler<ActionEv
         this.sector = sector;
     }
 
+
     @Override
     public void handle(ActionEvent actionEvent) {
         //agregar todos los bloque

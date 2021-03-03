@@ -9,6 +9,7 @@ public class BloqueAlgoritmoPersonalizado implements Bloque {
         this.listaBloques.add(posicion, unBloque);
     }
 
+
     @Override
     public void ejecutar(Personaje unPersonaje) {
         for (Bloque unBloque : listaBloques) {
@@ -19,7 +20,7 @@ public class BloqueAlgoritmoPersonalizado implements Bloque {
     @Override
     public void ejecutarBloqueInverso(Personaje unPersonaje) {}
 
-    public void agregarListaBloques(ArrayList<Bloque> bloques ){
+    public void agregarListaBloques(ArrayList<Bloque> bloques) {
         this.listaBloques = (ArrayList<Bloque>) bloques.clone();
     }
 }
