@@ -48,7 +48,7 @@ public class ContenedorPrincipal extends BorderPane {
         Button botonBloqueArriba = new Button("Arriba");
         BotonBloqueArribaHandler botonBloqueArribaHandler = new BotonBloqueArribaHandler(tablero, vistaSectorAlgoritmo);
         botonBloqueArriba.setOnAction(botonBloqueArribaHandler);
-        Image imagenFlechaArriba = new Image("file:///home/gonza/Escritorio/tp2algo3/AlgoBlocks/src/flechaArriba.jpg");
+        Image imagenFlechaArriba = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/flechaArriba.jpg");
         ImageView imagenFlechaArribaView = new ImageView(imagenFlechaArriba);
         imagenFlechaArribaView.setFitHeight(55);
         imagenFlechaArribaView.setFitWidth(100);
@@ -57,7 +57,7 @@ public class ContenedorPrincipal extends BorderPane {
         Button botonBloqueAbajo = new Button("Abajo");
         BotonBloqueAbajoHandler botonBloqueAbajoHandler = new BotonBloqueAbajoHandler(tablero, vistaSectorAlgoritmo);
         botonBloqueAbajo.setOnAction(botonBloqueAbajoHandler);
-        Image imagenFlechaAbajo = new Image("file:///home/gonza/Escritorio/tp2algo3/AlgoBlocks/src/flechaAbajo.jpg");
+        Image imagenFlechaAbajo = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/flechaAbajo.jpg");
         ImageView imagenFlechaAbajoView = new ImageView(imagenFlechaAbajo);
         imagenFlechaAbajoView.setFitHeight(55);
         imagenFlechaAbajoView.setFitWidth(100);
@@ -66,7 +66,7 @@ public class ContenedorPrincipal extends BorderPane {
         Button botonBloqueDerecha = new Button("Derecha");
         BotonBloqueDerechaHandler botonBloqueDerechaHandler = new BotonBloqueDerechaHandler(tablero, vistaSectorAlgoritmo);
         botonBloqueDerecha.setOnAction(botonBloqueDerechaHandler);
-        Image imagenFlechaDerecha = new Image("file:///home/gonza/Escritorio/tp2algo3/AlgoBlocks/src/flechaDerecha.jpg");
+        Image imagenFlechaDerecha = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/flechaDerecha.jpg");
         ImageView imagenFlechaDerechaView = new ImageView(imagenFlechaDerecha);
         imagenFlechaDerechaView.setFitHeight(55);
         imagenFlechaDerechaView.setFitWidth(80);
@@ -75,7 +75,7 @@ public class ContenedorPrincipal extends BorderPane {
         Button botonBloqueIzquierda = new Button("Izquierda");
         BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler = new BotonBloqueIzquierdaHandler(tablero, vistaSectorAlgoritmo);
         botonBloqueIzquierda.setOnAction(botonBloqueIzquierdaHandler);
-        Image imagenFlechaIzquierda = new Image("file:///home/gonza/Escritorio/tp2algo3/AlgoBlocks/src/flechaIzquierda.jpg");
+        Image imagenFlechaIzquierda = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/flechaIzquierda.jpg");
         ImageView imagenFlechaIzquierdaView = new ImageView(imagenFlechaIzquierda);
         imagenFlechaIzquierdaView.setFitHeight(55);
         imagenFlechaIzquierdaView.setFitWidth(80);
@@ -85,9 +85,15 @@ public class ContenedorPrincipal extends BorderPane {
         BotonBloqueLapizArribaHandler botonBloqueLapizArribaHandler = new BotonBloqueLapizArribaHandler(tablero, vistaSectorAlgoritmo) ;
         botonBloqueLapizArriba.setOnAction(botonBloqueLapizArribaHandler);
 
+
         Button botonBloqueLapizAbajo = new Button("Lapiz Abajo");
         BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler = new BotonBloqueLapizAbajoHandler(tablero, vistaSectorAlgoritmo);
         botonBloqueLapizAbajo.setOnAction(botonBloqueLapizAbajoHandler);
+        Image imagenLapizAbajo = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/lapizAbajo.jpg");
+        ImageView imagenLapizAbajoView = new ImageView(imagenLapizAbajo);
+        imagenLapizAbajoView.setFitHeight(55);
+        imagenLapizAbajoView.setFitWidth(80);
+        botonBloqueLapizAbajo.setGraphic(imagenLapizAbajoView);
 
         VBox sectorBloques = new VBox(new Node[]{nombreVista, botonBloqueArriba, botonBloqueAbajo,
                 botonBloqueDerecha, botonBloqueIzquierda, botonBloqueLapizArriba, botonBloqueLapizAbajo});
