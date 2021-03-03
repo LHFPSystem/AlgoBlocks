@@ -107,22 +107,24 @@ public class ContenedorPrincipal extends BorderPane {
         imagenLapizAbajoView.setFitWidth(80);
         botonBloqueLapizAbajo.setGraphic(imagenLapizAbajoView);
 
-        Button botonGuardarAlgoritmo = new Button("Guardar Algoritmo");
-        BotonGuardarAlgoritmoHandler botonGuardarAlgoritmoHandler = new BotonGuardarAlgoritmoHandler(tablero);
-        Image imagenGuardarAlgoritmo = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/guardar.jpg");
-        ImageView imagenGuardarAlgoritmoView = new ImageView(imagenGuardarAlgoritmo);
-        imagenGuardarAlgoritmoView.setFitHeight(55);
-        imagenGuardarAlgoritmoView.setFitWidth(50);
-        botonGuardarAlgoritmo.setGraphic(imagenGuardarAlgoritmoView);
-
         VBox sectorBloques = new VBox(new Node[]{nombreVista, botonLimpiarAlgoritmo, botonBloqueArriba, botonBloqueAbajo,
-                botonBloqueDerecha, botonBloqueIzquierda, botonBloqueLapizArriba, botonBloqueLapizAbajo,
-                botonGuardarAlgoritmo});
+                botonBloqueDerecha, botonBloqueIzquierda, botonBloqueLapizArriba, botonBloqueLapizAbajo});
         sectorBloques.setSpacing(10.0D);
         sectorBloques.setPadding(new Insets(15.0D));
         sectorBloques.setPrefWidth(400);
         sectorBloques.setPrefHeight(400);
         sectorBloques.setStyle("-fx-border-color: brown;");
+
+        Button botonGuardarAlgoritmo = new Button("Guardar Algoritmo");
+        BotonGuardarAlgoritmoHandler botonGuardarAlgoritmoHandler = new BotonGuardarAlgoritmoHandler(tablero, sectorBloques);
+        botonGuardarAlgoritmo.setOnAction(botonGuardarAlgoritmoHandler);
+        Image imagenGuardarAlgoritmo = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/guardar.jpg");
+        ImageView imagenGuardarAlgoritmoView = new ImageView(imagenGuardarAlgoritmo);
+        imagenGuardarAlgoritmoView.setFitHeight(55);
+        imagenGuardarAlgoritmoView.setFitWidth(50);
+        botonGuardarAlgoritmo.setGraphic(imagenGuardarAlgoritmoView);
+        sectorBloques.getChildren().add(botonGuardarAlgoritmo);
+
         this.setLeft(sectorBloques);
 
     }

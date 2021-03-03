@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tablero {
-    List<Bloque> bloques = new ArrayList<>();
+    ArrayList<Bloque> bloques = new ArrayList<>();
     Dibujo dibujo = new Dibujo();
     Personaje unPersonaje = new Personaje(dibujo);
 
@@ -28,6 +28,13 @@ public class Tablero {
         this.bloques.clear();
     }
 
+    public int getCantidadBloques() {
+        return this.bloques.size();
+    }
+
+    public ArrayList<Bloque> getBloques() {
+        return this.bloques;
+    }
 }
 
 
