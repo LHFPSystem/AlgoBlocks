@@ -9,22 +9,19 @@ import edu.fiuba.algo3.Controlador.BotonBloqueLapizAbajoHandler;
 import edu.fiuba.algo3.Controlador.BotonEjecutarHandler;
 import edu.fiuba.algo3.Controlador.BotonGuardarAlgoritmoHandler;
 import edu.fiuba.algo3.Controlador.BotonLimpiarAlgoritmoHandler;
+import edu.fiuba.algo3.Controlador.BotonRepetirDosVecesHandler;
+import edu.fiuba.algo3.Controlador.BotonListoRepetirDosVecesHandler;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class ContenedorPrincipal extends BorderPane {
@@ -123,8 +120,23 @@ public class ContenedorPrincipal extends BorderPane {
         imagenGuardarAlgoritmoView.setFitHeight(55);
         imagenGuardarAlgoritmoView.setFitWidth(50);
         botonGuardarAlgoritmo.setGraphic(imagenGuardarAlgoritmoView);
-        sectorBloques.getChildren().add(botonGuardarAlgoritmo);
 
+        Button botonRepetirDosVeces = new Button("Repetir dos veces");
+        BotonRepetirDosVecesHandler botonRepetirDosVecesHandler = new BotonRepetirDosVecesHandler(botonBloqueAbajo
+
+
+        );
+        botonRepetirDosVeces.setOnAction(botonRepetirDosVecesHandler);
+
+        Button listoRepetirDosVeces = new Button("Finalizar Repetir Dos Veces");
+        BotonListoRepetirDosVecesHandler botonListoRepetirDosVecesHandler = new BotonListoRepetirDosVecesHandler(botonBloqueAbajo, botonBloqueAbajoHandler
+
+        );
+        listoRepetirDosVeces.setOnAction(botonListoRepetirDosVecesHandler);
+
+        sectorBloques.getChildren().add(botonGuardarAlgoritmo);
+        sectorBloques.getChildren().add(botonRepetirDosVeces);
+        sectorBloques.getChildren().add(listoRepetirDosVeces);
         this.setLeft(sectorBloques);
 
     }
