@@ -7,6 +7,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 
@@ -23,10 +25,13 @@ public class BotonBloqueDerechaHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent){
 
-        System.out.println("Derecha");
-        Label labelDerecha = new Label("Derecha");
-        sectorAlgoritmo.setMargin(labelDerecha, new Insets(10, 10, 10, 10));
-        sectorAlgoritmo.getChildren().add(labelDerecha);
         this.tablero.setBloque(new BloqueMoverDerecha());
+        Image imagenFlechaDerecha = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/flechaDerecha.jpg");
+        ImageView imagenFlechaDerechaView = new ImageView(imagenFlechaDerecha);
+        imagenFlechaDerechaView.setFitWidth(40);
+        imagenFlechaDerechaView.setFitHeight(35);
+        sectorAlgoritmo.setMargin(imagenFlechaDerechaView, new Insets(10, 10, 10, 10));
+        sectorAlgoritmo.getChildren().add(imagenFlechaDerechaView);
+
     }
 }
