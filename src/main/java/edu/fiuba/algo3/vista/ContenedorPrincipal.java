@@ -14,6 +14,8 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -46,18 +48,38 @@ public class ContenedorPrincipal extends BorderPane {
         Button botonBloqueArriba = new Button("Arriba");
         BotonBloqueArribaHandler botonBloqueArribaHandler = new BotonBloqueArribaHandler(tablero, vistaSectorAlgoritmo);
         botonBloqueArriba.setOnAction(botonBloqueArribaHandler);
+        Image imagenFlechaArriba = new Image("file:///home/gonza/Escritorio/tp2algo3/AlgoBlocks/src/flechaArriba.jpg");
+        ImageView imagenFlechaArribaView = new ImageView(imagenFlechaArriba);
+        imagenFlechaArribaView.setFitHeight(55);
+        imagenFlechaArribaView.setFitWidth(100);
+        botonBloqueArriba.setGraphic(imagenFlechaArribaView);
 
         Button botonBloqueAbajo = new Button("Abajo");
         BotonBloqueAbajoHandler botonBloqueAbajoHandler = new BotonBloqueAbajoHandler(tablero, vistaSectorAlgoritmo);
         botonBloqueAbajo.setOnAction(botonBloqueAbajoHandler);
+        Image imagenFlechaAbajo = new Image("file:///home/gonza/Escritorio/tp2algo3/AlgoBlocks/src/flechaAbajo.jpg");
+        ImageView imagenFlechaAbajoView = new ImageView(imagenFlechaAbajo);
+        imagenFlechaAbajoView.setFitHeight(55);
+        imagenFlechaAbajoView.setFitWidth(100);
+        botonBloqueAbajo.setGraphic(imagenFlechaAbajoView);
 
         Button botonBloqueDerecha = new Button("Derecha");
         BotonBloqueDerechaHandler botonBloqueDerechaHandler = new BotonBloqueDerechaHandler(tablero, vistaSectorAlgoritmo);
         botonBloqueDerecha.setOnAction(botonBloqueDerechaHandler);
+        Image imagenFlechaDerecha = new Image("file:///home/gonza/Escritorio/tp2algo3/AlgoBlocks/src/flechaDerecha.jpg");
+        ImageView imagenFlechaDerechaView = new ImageView(imagenFlechaDerecha);
+        imagenFlechaDerechaView.setFitHeight(55);
+        imagenFlechaDerechaView.setFitWidth(80);
+        botonBloqueDerecha.setGraphic(imagenFlechaDerechaView);
 
         Button botonBloqueIzquierda = new Button("Izquierda");
         BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler = new BotonBloqueIzquierdaHandler(tablero, vistaSectorAlgoritmo);
         botonBloqueIzquierda.setOnAction(botonBloqueIzquierdaHandler);
+        Image imagenFlechaIzquierda = new Image("file:///home/gonza/Escritorio/tp2algo3/AlgoBlocks/src/flechaIzquierda.jpg");
+        ImageView imagenFlechaIzquierdaView = new ImageView(imagenFlechaIzquierda);
+        imagenFlechaIzquierdaView.setFitHeight(55);
+        imagenFlechaIzquierdaView.setFitWidth(80);
+        botonBloqueIzquierda.setGraphic(imagenFlechaIzquierdaView);
 
         Button botonBloqueLapizArriba = new Button("Lapiz Arriba");
         BotonBloqueLapizArribaHandler botonBloqueLapizArribaHandler = new BotonBloqueLapizArribaHandler(tablero, vistaSectorAlgoritmo) ;
