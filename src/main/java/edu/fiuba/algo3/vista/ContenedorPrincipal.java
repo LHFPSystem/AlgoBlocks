@@ -122,16 +122,16 @@ public class ContenedorPrincipal extends BorderPane {
         botonGuardarAlgoritmo.setGraphic(imagenGuardarAlgoritmoView);
 
         Button botonRepetirDosVeces = new Button("Repetir dos veces");
-        BotonRepetirDosVecesHandler botonRepetirDosVecesHandler = new BotonRepetirDosVecesHandler(botonBloqueAbajo
-
-
-        );
+        BotonRepetirDosVecesHandler botonRepetirDosVecesHandler = new BotonRepetirDosVecesHandler(botonBloqueAbajo);
         botonRepetirDosVeces.setOnAction(botonRepetirDosVecesHandler);
 
         Button listoRepetirDosVeces = new Button("Finalizar Repetir Dos Veces");
-        BotonListoRepetirDosVecesHandler botonListoRepetirDosVecesHandler = new BotonListoRepetirDosVecesHandler(botonBloqueAbajo, botonBloqueAbajoHandler
 
-        );
+        BotonListoRepetirDosVecesHandler botonListoRepetirDosVecesHandler = new BotonListoRepetirDosVecesHandler(botonBloqueAbajo,
+                botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
+                botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
+                botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler);
+
         listoRepetirDosVeces.setOnAction(botonListoRepetirDosVecesHandler);
 
         sectorBloques.getChildren().add(botonGuardarAlgoritmo);
