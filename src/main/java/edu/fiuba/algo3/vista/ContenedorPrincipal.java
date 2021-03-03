@@ -85,12 +85,17 @@ public class ContenedorPrincipal extends BorderPane {
         Button botonBloqueLapizArriba = new Button("Lapiz Arriba");
         BotonBloqueLapizArribaHandler botonBloqueLapizArribaHandler = new BotonBloqueLapizArribaHandler(tablero, vistaSectorAlgoritmo) ;
         botonBloqueLapizArriba.setOnAction(botonBloqueLapizArribaHandler);
+        Image imagenLapizArriba = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/personajeConLapizArriba.jpg");
+        ImageView imagenLapizArribaView = new ImageView(imagenLapizArriba);
+        imagenLapizArribaView.setFitHeight(55);
+        imagenLapizArribaView.setFitWidth(80);
+        botonBloqueLapizArriba.setGraphic(imagenLapizArribaView);
 
 
         Button botonBloqueLapizAbajo = new Button("Lapiz Abajo");
         BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler = new BotonBloqueLapizAbajoHandler(tablero, vistaSectorAlgoritmo);
         botonBloqueLapizAbajo.setOnAction(botonBloqueLapizAbajoHandler);
-        Image imagenLapizAbajo = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/lapizAbajo.jpg");
+        Image imagenLapizAbajo = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/personajeConLapizAbajo.jpg");
         ImageView imagenLapizAbajoView = new ImageView(imagenLapizAbajo);
         imagenLapizAbajoView.setFitHeight(55);
         imagenLapizAbajoView.setFitWidth(80);

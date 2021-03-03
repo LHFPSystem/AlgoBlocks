@@ -28,9 +28,9 @@ public class BotonEjecutarHandler implements EventHandler<ActionEvent> {
         this.tablero.ejecutarAlgoritmo();
         dibujo = this.tablero.getDibujo();
         Image imagenPersonajeConLapizBajo =
-                new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/personaje_con_lapiz_bajo.png");
+                new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/personajeConLapizAbajo.jpg");
         Image imagenPersonajeConLapizLevantado =
-                new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/personaje_con_lapiz_levantado.png");
+                new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/personajeConLapizArriba.jpg");
 
         Tramo tramoInical = new Tramo(0,0,true);
         Tramo tramoFinal = dibujo.mostrarTramoYAvanzarAlSiguiente();
