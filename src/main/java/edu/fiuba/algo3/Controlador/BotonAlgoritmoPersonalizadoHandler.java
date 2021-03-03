@@ -10,20 +10,21 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 public class BotonAlgoritmoPersonalizadoHandler implements EventHandler<ActionEvent> {
-    private BloqueAlgoritmoPersonalizado algoritmoPersonalizado = new BloqueAlgoritmoPersonalizado();
+    private BloqueAlgoritmoPersonalizado algoritmoPersonalizado;
     private Tablero tablero;
     private VBox sector;
     private String nombre;
 
-    public BotonAlgoritmoPersonalizadoHandler(Tablero tablero, VBox sectorBloque, String nombre){
+    public BotonAlgoritmoPersonalizadoHandler(Tablero tablero, VBox sectorBloque, String nombre, BloqueAlgoritmoPersonalizado bloque){
         this.tablero = tablero;
         this.sector = sectorBloque;
         this.nombre = nombre;
+        this.algoritmoPersonalizado = bloque;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        algoritmoPersonalizado.agregarListaBloques(tablero.getBloques());
+        //algoritmoPersonalizado.agregarListaBloques(tablero.getBloques());
         this.tablero.setBloque(algoritmoPersonalizado);
         Label nombreVista = new Label(nombre);
         sector.setMargin(nombreVista, new Insets(10, 10, 10, 10));

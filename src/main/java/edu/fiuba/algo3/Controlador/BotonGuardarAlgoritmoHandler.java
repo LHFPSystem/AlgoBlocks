@@ -10,7 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
 public class BotonGuardarAlgoritmoHandler implements EventHandler<ActionEvent> {
-    //private BloqueAlgoritmoPersonalizado algoritmoPersonalizado = new BloqueAlgoritmoPersonalizado();
+    private BloqueAlgoritmoPersonalizado algoritmoPersonalizado;
     private Tablero tablero;
     private VBox sectorAlgoritmo, sectorBloque;
 
@@ -25,7 +25,8 @@ public class BotonGuardarAlgoritmoHandler implements EventHandler<ActionEvent> {
         if(this.tablero.getCantidadBloques() == 0){
             throw new RuntimeException("No hay bloques para guardar.");
         }
-        //algoritmoPersonalizado.agregarListaBloques(tablero.getBloques());
+        algoritmoPersonalizado = new BloqueAlgoritmoPersonalizado();
+        algoritmoPersonalizado.agregarListaBloques(tablero.getBloques());
 
         TextInputDialog texto = new TextInputDialog();
         texto.setTitle("Algoritmo Personalizado");
@@ -37,7 +38,7 @@ public class BotonGuardarAlgoritmoHandler implements EventHandler<ActionEvent> {
         Button botonAlgoritmoPersonalizado = new Button();
         botonAlgoritmoPersonalizado.setText(nombreAlgoritmo.get());
         sectorBloque.getChildren().add(botonAlgoritmoPersonalizado);
-        BotonAlgoritmoPersonalizadoHandler botonAlgoritmoPersonalizadoHandler = new BotonAlgoritmoPersonalizadoHandler(tablero,sectorAlgoritmo,nombreAlgoritmo.get());
+        BotonAlgoritmoPersonalizadoHandler botonAlgoritmoPersonalizadoHandler = new BotonAlgoritmoPersonalizadoHandler(tablero,sectorAlgoritmo,nombreAlgoritmo.get(), algoritmoPersonalizado);
         botonAlgoritmoPersonalizado.setOnAction(botonAlgoritmoPersonalizadoHandler);
     }
 }
