@@ -103,6 +103,11 @@ public class ContenedorPrincipal extends BorderPane {
 
         Button botonGuardarAlgoritmo = new Button("Guardar Algoritmo");
         BotonGuardarAlgoritmoHandler botonGuardarAlgoritmoHandler = new BotonGuardarAlgoritmoHandler(tablero);
+        Image imagenGuardarAlgoritmo = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/guardar.jpg");
+        ImageView imagenGuardarAlgoritmoView = new ImageView(imagenGuardarAlgoritmo);
+        imagenGuardarAlgoritmoView.setFitHeight(55);
+        imagenGuardarAlgoritmoView.setFitWidth(50);
+        botonGuardarAlgoritmo.setGraphic(imagenGuardarAlgoritmoView);
 
         VBox sectorBloques = new VBox(new Node[]{nombreVista, botonBloqueArriba, botonBloqueAbajo,
                 botonBloqueDerecha, botonBloqueIzquierda, botonBloqueLapizArriba, botonBloqueLapizAbajo,
