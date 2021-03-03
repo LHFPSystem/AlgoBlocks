@@ -23,4 +23,11 @@ public class Tablero {
     public Dibujo getDibujo(){
         return this.dibujo;
     }
+
+    public void limpiarListaBloques(){
+        this.bloques.clear();
+    }
+
 }
+
+

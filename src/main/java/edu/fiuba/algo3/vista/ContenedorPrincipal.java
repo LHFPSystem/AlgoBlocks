@@ -8,6 +8,7 @@ import edu.fiuba.algo3.Controlador.BotonBloqueLapizArribaHandler;
 import edu.fiuba.algo3.Controlador.BotonBloqueLapizAbajoHandler;
 import edu.fiuba.algo3.Controlador.BotonEjecutarHandler;
 import edu.fiuba.algo3.Controlador.BotonGuardarAlgoritmoHandler;
+import edu.fiuba.algo3.Controlador.BotonLimpiarAlgoritmoHandler;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -45,6 +46,11 @@ public class ContenedorPrincipal extends BorderPane {
     private void setVistaSectorBloques(Tablero tablero, VBox vistaSectorAlgoritmo){
 
         Label nombreVista = new Label("Bloques");
+
+        Button botonLimpiarAlgoritmo = new Button("Limpiar algoritmo");
+        BotonLimpiarAlgoritmoHandler botonLimpiarAlgoritmoHandler = new BotonLimpiarAlgoritmoHandler(tablero, vistaSectorAlgoritmo);
+        botonLimpiarAlgoritmo.setOnAction(botonLimpiarAlgoritmoHandler);
+
 
         Button botonBloqueArriba = new Button("Arriba");
         BotonBloqueArribaHandler botonBloqueArribaHandler = new BotonBloqueArribaHandler(tablero, vistaSectorAlgoritmo);
@@ -109,7 +115,7 @@ public class ContenedorPrincipal extends BorderPane {
         imagenGuardarAlgoritmoView.setFitWidth(50);
         botonGuardarAlgoritmo.setGraphic(imagenGuardarAlgoritmoView);
 
-        VBox sectorBloques = new VBox(new Node[]{nombreVista, botonBloqueArriba, botonBloqueAbajo,
+        VBox sectorBloques = new VBox(new Node[]{nombreVista, botonLimpiarAlgoritmo, botonBloqueArriba, botonBloqueAbajo,
                 botonBloqueDerecha, botonBloqueIzquierda, botonBloqueLapizArriba, botonBloqueLapizAbajo,
                 botonGuardarAlgoritmo});
         sectorBloques.setSpacing(10.0D);
