@@ -21,6 +21,8 @@ public class BloqueAlgoritmoPersonalizado implements Bloque {
     public void ejecutarBloqueInverso(Personaje unPersonaje) {}
 
     public void agregarListaBloques(ArrayList<Bloque> bloques) {
-        this.listaBloques = (ArrayList<Bloque>) bloques.clone();
+        for (Bloque unBloque : bloques) {
+            this.listaBloques.add(unBloque);
+        }
     }
 }

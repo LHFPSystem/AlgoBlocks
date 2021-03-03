@@ -116,7 +116,7 @@ public class ContenedorPrincipal extends BorderPane {
         sectorBloques.setStyle("-fx-border-color: brown;");
 
         Button botonGuardarAlgoritmo = new Button("Guardar Algoritmo");
-        BotonGuardarAlgoritmoHandler botonGuardarAlgoritmoHandler = new BotonGuardarAlgoritmoHandler(tablero, sectorBloques);
+        BotonGuardarAlgoritmoHandler botonGuardarAlgoritmoHandler = new BotonGuardarAlgoritmoHandler(tablero, vistaSectorAlgoritmo, sectorBloques);
         botonGuardarAlgoritmo.setOnAction(botonGuardarAlgoritmoHandler);
         Image imagenGuardarAlgoritmo = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/guardar.jpg");
         ImageView imagenGuardarAlgoritmoView = new ImageView(imagenGuardarAlgoritmo);

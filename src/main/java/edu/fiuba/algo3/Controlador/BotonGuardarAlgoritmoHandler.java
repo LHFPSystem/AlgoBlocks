@@ -10,13 +10,14 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
 public class BotonGuardarAlgoritmoHandler implements EventHandler<ActionEvent> {
-    private BloqueAlgoritmoPersonalizado algoritmoPersonalizado = new BloqueAlgoritmoPersonalizado();
+    //private BloqueAlgoritmoPersonalizado algoritmoPersonalizado = new BloqueAlgoritmoPersonalizado();
     private Tablero tablero;
-    private VBox sector;
+    private VBox sectorAlgoritmo, sectorBloque;
 
-    public BotonGuardarAlgoritmoHandler(Tablero tablero, VBox sector){
+    public BotonGuardarAlgoritmoHandler(Tablero tablero, VBox sectorAlgoritmo, VBox sectorBloque){
         this.tablero = tablero;
-        this.sector = sector;
+        this.sectorBloque = sectorBloque;
+        this.sectorAlgoritmo = sectorAlgoritmo;
     }
 
     @Override
@@ -24,7 +25,7 @@ public class BotonGuardarAlgoritmoHandler implements EventHandler<ActionEvent> {
         if(this.tablero.getCantidadBloques() == 0){
             throw new RuntimeException("No hay bloques para guardar.");
         }
-        algoritmoPersonalizado.agregarListaBloques(tablero.getBloques());
+        //algoritmoPersonalizado.agregarListaBloques(tablero.getBloques());
 
         TextInputDialog texto = new TextInputDialog();
         texto.setTitle("Algoritmo Personalizado");
@@ -35,9 +36,8 @@ public class BotonGuardarAlgoritmoHandler implements EventHandler<ActionEvent> {
 
         Button botonAlgoritmoPersonalizado = new Button();
         botonAlgoritmoPersonalizado.setText(nombreAlgoritmo.get());
-        sector.getChildren().add(botonAlgoritmoPersonalizado);
-        BotonAlgoritmoPersonalizadoHandler botonAlgoritmoPersonalizadoHandler = new BotonAlgoritmoPersonalizadoHandler(tablero,sector);
+        sectorBloque.getChildren().add(botonAlgoritmoPersonalizado);
+        BotonAlgoritmoPersonalizadoHandler botonAlgoritmoPersonalizadoHandler = new BotonAlgoritmoPersonalizadoHandler(tablero,sectorAlgoritmo,nombreAlgoritmo.get());
         botonAlgoritmoPersonalizado.setOnAction(botonAlgoritmoPersonalizadoHandler);
-
     }
 }
