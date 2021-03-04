@@ -3,7 +3,10 @@ package edu.fiuba.algo3.Controlador;
 import edu.fiuba.algo3.modelo.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import edu.fiuba.algo3.Controlador.BotonFinalizarSeleccionDeBloquesHandler;
 
@@ -65,6 +68,12 @@ public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
             public void handle(ActionEvent actionEvent) {
                 repetir.agregarBloque(posicion,new BloqueMoverAbajo());
                 posicion++;
+                Image imagenFlechaAbajo = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/flechaAbajo.jpg");
+                ImageView imagenFlechaAbajoView = new ImageView(imagenFlechaAbajo);
+                imagenFlechaAbajoView.setFitWidth(40);
+                imagenFlechaAbajoView.setFitHeight(35);
+                sectorAlgoritmo.setMargin(imagenFlechaAbajoView, new Insets(10, 10, 10, 10));
+                sectorAlgoritmo.getChildren().add(imagenFlechaAbajoView);
             }
 
         });
@@ -73,6 +82,12 @@ public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
             public void handle(ActionEvent actionEvent) {
                 repetir.agregarBloque(posicion,new BloqueMoverArriba());
                 posicion++;
+                Image imagenFlechaArriba = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/flechaArriba.jpg");
+                ImageView imagenFlechaArribaView = new ImageView(imagenFlechaArriba);
+                imagenFlechaArribaView.setFitWidth(40);
+                imagenFlechaArribaView.setFitHeight(35);
+                sectorAlgoritmo.setMargin(imagenFlechaArribaView, new Insets(10, 10, 10, 10));
+                sectorAlgoritmo.getChildren().add(imagenFlechaArribaView);
             }
         });
         this.botonBloqueDerecha.setOnAction(new EventHandler<ActionEvent>() {
@@ -80,6 +95,12 @@ public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
             public void handle(ActionEvent actionEvent) {
                 repetir.agregarBloque(posicion,new BloqueMoverDerecha());
                 posicion++;
+                Image imagenFlechaDerecha = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/flechaDerecha.jpg");
+                ImageView imagenFlechaDerechaView = new ImageView(imagenFlechaDerecha);
+                imagenFlechaDerechaView.setFitWidth(40);
+                imagenFlechaDerechaView.setFitHeight(35);
+                sectorAlgoritmo.setMargin(imagenFlechaDerechaView, new Insets(10, 10, 10, 10));
+                sectorAlgoritmo.getChildren().add(imagenFlechaDerechaView);
             }
         });
         this.botonBloqueIzquierda.setOnAction(new EventHandler<ActionEvent>() {
@@ -87,6 +108,12 @@ public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
             public void handle(ActionEvent actionEvent) {
                 repetir.agregarBloque(posicion,new BloqueMoverIzquierda());
                 posicion++;
+                Image imagenFlechaIzquierda = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/flechaIzquierda.jpg");
+                ImageView imagenFlechaIzquierdaView = new ImageView(imagenFlechaIzquierda);
+                imagenFlechaIzquierdaView.setFitWidth(40);
+                imagenFlechaIzquierdaView.setFitHeight(35);
+                sectorAlgoritmo.setMargin(imagenFlechaIzquierdaView , new Insets(10, 10, 10, 10));
+                sectorAlgoritmo.getChildren().add(imagenFlechaIzquierdaView );
             }
         });
         this.botonLapizAbajo.setOnAction(new EventHandler<ActionEvent>() {
@@ -94,6 +121,12 @@ public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
             public void handle(ActionEvent actionEvent) {
                 repetir.agregarBloque(posicion,new BloqueLapizAbajo());
                 posicion++;
+                Image imagenLapizAbajo = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/personajeConLapizAbajo.jpg");
+                ImageView imagenLapizAbajoView = new ImageView(imagenLapizAbajo);
+                imagenLapizAbajoView.setFitWidth(60);
+                imagenLapizAbajoView.setFitHeight(55);
+                sectorAlgoritmo.setMargin(imagenLapizAbajoView, new Insets(10, 10, 10, 10));
+                sectorAlgoritmo.getChildren().add(imagenLapizAbajoView);
             }
         });
         this.botonLapizArriba.setOnAction(new EventHandler<ActionEvent>() {
@@ -101,6 +134,12 @@ public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
             public void handle(ActionEvent actionEvent) {
                 repetir.agregarBloque(posicion,new BloqueLapizArriba());
                 posicion++;
+                Image imagenLapizArriba = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/personajeConLapizArriba.jpg");
+                ImageView imagenLapizArribaView = new ImageView(imagenLapizArriba);
+                imagenLapizArribaView.setFitWidth(60);
+                imagenLapizArribaView.setFitHeight(55);
+                sectorAlgoritmo.setMargin(imagenLapizArribaView, new Insets(10, 10, 10, 10));
+                sectorAlgoritmo.getChildren().add(imagenLapizArribaView);
             }
         });
 
