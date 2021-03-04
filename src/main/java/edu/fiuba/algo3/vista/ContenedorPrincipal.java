@@ -34,7 +34,6 @@ public class ContenedorPrincipal extends BorderPane {
     VBox vistaSectorDibujo = new VBox();
     Canvas canvas;
 
-
     public ContenedorPrincipal(Stage stage, Tablero tablero) {
 
         this.setVistaSectorBloques(tablero, vistaSectorAlgoritmo);
@@ -42,7 +41,6 @@ public class ContenedorPrincipal extends BorderPane {
         this.setVistaSectorDibujo(tablero);
 
     }
-
 
     private void setVistaSectorBloques(Tablero tablero, VBox vistaSectorAlgoritmo){
 
@@ -144,43 +142,18 @@ public class ContenedorPrincipal extends BorderPane {
                 botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
                 botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
                 botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler,
-                repetirDosVeces, sectorBloques, tablero, vistaSectorAlgoritmo);
+                repetirTresVeces, sectorBloques, tablero, vistaSectorAlgoritmo);
 
-        BotonInvertirHandler botonInvertirHandler = new BotonInvertirHandler(botonBloqueAbajo, botonBloqueArriba,
-                botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba, invertir);
+        BotonInvertirHandler botonInvertirHandler = new BotonInvertirHandler(botonBloqueAbajo,
+                botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
+                botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
+                botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler,
+                invertir, sectorBloques, tablero, vistaSectorAlgoritmo);
 
         botonRepetirDosVeces.setOnAction(botonRepetirDosVecesHandler);
         botonRepetirTresVeces.setOnAction(botonRepetirTresVecesHandler);
         botonInvertir.setOnAction(botonInvertirHandler);
 
-        Button botonafinalizarRepetirDosVeces = new Button("Finalizar Repetir Dos Veces");
-
-        /*BotonFinalizarSeleccionDeBloquesHandler botonFinalizarRepetirDosVecesHandler = new BotonFinalizarSeleccionDeBloquesHandler(botonBloqueAbajo,
-                botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
-                botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
-                botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler, repetirDosVeces, tablero);
-
-        botonafinalizarRepetirDosVeces.setOnAction(botonFinalizarRepetirDosVecesHandler);
-*/
-        Button botonFinalizarRepetirTresVeces = new Button("Finalizar Repetir Tres Veces");
-
-       /* BotonFinalizarSeleccionDeBloquesHandler botonFinalizarRepetirTresVecesHandler = new BotonFinalizarSeleccionDeBloquesHandler(botonBloqueAbajo,
-                botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
-                botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
-                botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler, repetirTresVeces, tablero);
-
-        botonFinalizarRepetirTresVeces.setOnAction(botonFinalizarRepetirTresVecesHandler);
-
-        Button botonFinalizarInvertir = new Button("Finalizar Invertir");
-
-        BotonFinalizarSeleccionDeBloquesHandler botonFinalizarInvertirHandler = new BotonFinalizarSeleccionDeBloquesHandler(botonBloqueAbajo,
-                botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
-                botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
-                botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler, invertir, tablero);
-
-        botonFinalizarInvertir.setOnAction(botonFinalizarInvertirHandler);
-
-*/
         sectorBloques.getChildren().add(botonGuardarAlgoritmo);
         sectorBloques.getChildren().add(botonRepetirDosVeces);
         sectorBloques.getChildren().add(botonRepetirTresVeces);
