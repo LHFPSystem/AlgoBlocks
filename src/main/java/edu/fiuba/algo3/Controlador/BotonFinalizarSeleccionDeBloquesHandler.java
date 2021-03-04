@@ -5,6 +5,7 @@ import edu.fiuba.algo3.modelo.Tablero;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
 
 
 public class BotonFinalizarSeleccionDeBloquesHandler implements EventHandler<ActionEvent> {
@@ -22,6 +23,8 @@ public class BotonFinalizarSeleccionDeBloquesHandler implements EventHandler<Act
     private BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler;
     private Tablero tablero;
     private Bloque bloque;
+    private VBox sector;
+    private Button boton;
     public BotonFinalizarSeleccionDeBloquesHandler(Button botonBloqueAbajo, Button botonBloqueArriba,
                                                    Button botonBloqueDerecha, Button botonBloqueIzquierda,
                                                    Button botonLapizAbajo, Button botonLapizArriba,
@@ -31,7 +34,7 @@ public class BotonFinalizarSeleccionDeBloquesHandler implements EventHandler<Act
                                                    BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler,
                                                    BotonBloqueLapizArribaHandler botonBloqueLapizArribaHandler,
                                                    BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler,
-                                                   Bloque bloque , Tablero tablero){
+                                                   Bloque bloque , Tablero tablero, VBox sector, Button boton){
 
         this.botonBloqueAbajo = botonBloqueAbajo;
         this.botonBloqueArriba = botonBloqueArriba;
@@ -47,6 +50,8 @@ public class BotonFinalizarSeleccionDeBloquesHandler implements EventHandler<Act
         this.botonBloqueLapizAbajoHandler = botonBloqueLapizAbajoHandler;
         this.tablero = tablero;
         this.bloque = bloque;
+        this.sector = sector;
+        this.boton = boton;
     }
 
     @Override
@@ -58,5 +63,6 @@ public class BotonFinalizarSeleccionDeBloquesHandler implements EventHandler<Act
         this.botonLapizAbajo.setOnAction(botonBloqueLapizAbajoHandler);
         this.botonLapizArriba.setOnAction(botonBloqueLapizArribaHandler);
         this.tablero.setBloque(this.bloque);
+        sector.getChildren().remove(boton);
     }
 }

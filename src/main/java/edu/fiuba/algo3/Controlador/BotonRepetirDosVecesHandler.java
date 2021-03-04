@@ -4,6 +4,8 @@ import edu.fiuba.algo3.modelo.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+import edu.fiuba.algo3.Controlador.BotonFinalizarSeleccionDeBloquesHandler;
 
 public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
 
@@ -11,25 +13,49 @@ public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
     private Button botonBloqueArriba;
     private Button botonBloqueDerecha;
     private Button botonBloqueIzquierda;
-    private Button botonBloqueLapizAbajo;
-    private Button botonBloqueLapizArriba;
+    private Button botonLapizAbajo;
+    private Button botonLapizArriba;
+    private BotonBloqueAbajoHandler botonBloqueAbajoHandler;
+    private BotonBloqueArribaHandler botonBloqueArribaHandler;
+    private BotonBloqueDerechaHandler botonBloqueDerechaHandler;
+    private BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler;
+    private BotonBloqueLapizArribaHandler botonBloqueLapizArribaHandler;
+    private BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler;
     private int posicion = 0;
     private BloqueRepetir repetir;
-    public BotonRepetirDosVecesHandler(Button botonBloqueAbajo, Button botonBloqueArriba, Button botonBloqueDerecha,
-                                       Button botonBloqueIzquierda, Button botonBloqueLapizAbajo,
-                                       Button botonBloqueLapizArriba, BloqueRepetir repetir){
+    private VBox sector;
+    private Tablero tablero;
+    public BotonRepetirDosVecesHandler(Button botonBloqueAbajo, Button botonBloqueArriba,
+                                       Button botonBloqueDerecha, Button botonBloqueIzquierda,
+                                       Button botonLapizAbajo, Button botonLapizArriba,
+                                       BotonBloqueAbajoHandler botonBloqueAbajoHandler,
+                                       BotonBloqueArribaHandler botonBloqueArribaHandler,
+                                       BotonBloqueDerechaHandler botonBloqueDerechaHandler,
+                                       BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler,
+                                       BotonBloqueLapizArribaHandler botonBloqueLapizArribaHandler,
+                                       BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler,
+                                       BloqueRepetir repetir, VBox sector, Tablero tablero){
 
         this.botonBloqueAbajo = botonBloqueAbajo;
         this.botonBloqueArriba = botonBloqueArriba;
         this.botonBloqueDerecha = botonBloqueDerecha;
         this.botonBloqueIzquierda = botonBloqueIzquierda;
-        this.botonBloqueLapizAbajo = botonBloqueLapizAbajo;
-        this.botonBloqueLapizArriba = botonBloqueLapizArriba;
+        this.botonLapizAbajo = botonLapizAbajo;
+        this.botonLapizArriba = botonLapizArriba;
+        this.botonBloqueAbajoHandler = botonBloqueAbajoHandler;
+        this.botonBloqueArribaHandler = botonBloqueArribaHandler;
+        this.botonBloqueDerechaHandler = botonBloqueDerechaHandler;
+        this.botonBloqueIzquierdaHandler = botonBloqueIzquierdaHandler;
+        this.botonBloqueLapizArribaHandler = botonBloqueLapizArribaHandler;
+        this.botonBloqueLapizAbajoHandler = botonBloqueLapizAbajoHandler;
         this.repetir = repetir;
         this.repetir.establecerCantidadRepeticiones(2);
+        this.sector = sector;
+        this.tablero = tablero;
     }
     @Override
     public void handle(ActionEvent actionEvent) {
+
 
         this.botonBloqueAbajo.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -60,14 +86,14 @@ public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
                 posicion++;
             }
         });
-        this.botonBloqueLapizAbajo.setOnAction(new EventHandler<ActionEvent>() {
+        this.botonLapizAbajo.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 repetir.agregarBloque(posicion,new BloqueLapizAbajo());
                 posicion++;
             }
         });
-        this.botonBloqueLapizArriba.setOnAction(new EventHandler<ActionEvent>() {
+        this.botonLapizArriba.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 repetir.agregarBloque(posicion,new BloqueLapizArriba());
@@ -75,5 +101,19 @@ public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
             }
         });
 
+        Button boton = new Button("Finalizar Repetir Dos Veces");
+
+        BotonFinalizarSeleccionDeBloquesHandler botonFinalizarRepetirDosVecesHandler = new BotonFinalizarSeleccionDeBloquesHandler(botonBloqueAbajo,
+                botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonLapizAbajo,botonLapizArriba,
+                botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
+                botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler, repetir, tablero, sector, boton);
+        boton.setOnAction(botonFinalizarRepetirDosVecesHandler);
+
+        sector.getChildren().add(boton);
+
     }
+
+
+
+
 }
