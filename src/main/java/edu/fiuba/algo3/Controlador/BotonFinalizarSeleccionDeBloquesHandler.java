@@ -7,7 +7,7 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 
 
-public class BotonListoRepetirDosVecesHandler implements EventHandler<ActionEvent> {
+public class BotonFinalizarSeleccionDeBloquesHandler implements EventHandler<ActionEvent> {
     private Button botonBloqueAbajo;
     private Button botonBloqueArriba;
     private Button botonBloqueDerecha;
@@ -22,16 +22,16 @@ public class BotonListoRepetirDosVecesHandler implements EventHandler<ActionEven
     private BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler;
     private Tablero tablero;
     private Bloque bloque;
-    public BotonListoRepetirDosVecesHandler(Button botonBloqueAbajo, Button botonBloqueArriba,
-                                            Button botonBloqueDerecha, Button botonBloqueIzquierda,
-                                            Button botonLapizAbajo, Button botonLapizArriba,
-                                            BotonBloqueAbajoHandler botonBloqueAbajoHandler,
-                                            BotonBloqueArribaHandler botonBloqueArribaHandler,
-                                            BotonBloqueDerechaHandler botonBloqueDerechaHandler,
-                                            BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler,
-                                            BotonBloqueLapizArribaHandler botonBloqueLapizArribaHandler,
-                                            BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler,
-                                            Bloque bloque , Tablero tablero){
+    public BotonFinalizarSeleccionDeBloquesHandler(Button botonBloqueAbajo, Button botonBloqueArriba,
+                                                   Button botonBloqueDerecha, Button botonBloqueIzquierda,
+                                                   Button botonLapizAbajo, Button botonLapizArriba,
+                                                   BotonBloqueAbajoHandler botonBloqueAbajoHandler,
+                                                   BotonBloqueArribaHandler botonBloqueArribaHandler,
+                                                   BotonBloqueDerechaHandler botonBloqueDerechaHandler,
+                                                   BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler,
+                                                   BotonBloqueLapizArribaHandler botonBloqueLapizArribaHandler,
+                                                   BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler,
+                                                   Bloque bloque , Tablero tablero){
 
         this.botonBloqueAbajo = botonBloqueAbajo;
         this.botonBloqueArriba = botonBloqueArriba;

@@ -12,7 +12,7 @@ import edu.fiuba.algo3.Controlador.BotonLimpiarAlgoritmoHandler;
 import edu.fiuba.algo3.Controlador.BotonRepetirDosVecesHandler;
 import edu.fiuba.algo3.Controlador.BotonRepetirTresVecesHandler;
 import edu.fiuba.algo3.Controlador.BotonInvertirHandler;
-import edu.fiuba.algo3.Controlador.BotonListoRepetirDosVecesHandler;
+import edu.fiuba.algo3.Controlador.BotonFinalizarSeleccionDeBloquesHandler;
 import edu.fiuba.algo3.modelo.BloqueInvertir;
 import edu.fiuba.algo3.modelo.BloqueRepetir;
 import edu.fiuba.algo3.modelo.Tablero;
@@ -149,20 +149,41 @@ public class ContenedorPrincipal extends BorderPane {
         botonRepetirTresVeces.setOnAction(botonRepetirTresVecesHandler);
         botonInvertir.setOnAction(botonInvertirHandler);
 
-        Button botonListoRepetirDosVeces = new Button("Finalizar Repetir Dos Veces");
+        Button botonafinalizarRepetirDosVeces = new Button("Finalizar Repetir Dos Veces");
 
-        BotonListoRepetirDosVecesHandler botonListoRepetirDosVecesHandler = new BotonListoRepetirDosVecesHandler(botonBloqueAbajo,
+        BotonFinalizarSeleccionDeBloquesHandler botonFinalizarRepetirDosVecesHandler = new BotonFinalizarSeleccionDeBloquesHandler(botonBloqueAbajo,
                 botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
                 botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
                 botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler, repetirDosVeces, tablero);
 
-        botonListoRepetirDosVeces.setOnAction(botonListoRepetirDosVecesHandler);
+        botonafinalizarRepetirDosVeces.setOnAction(botonFinalizarRepetirDosVecesHandler);
+
+        Button botonFinalizarRepetirTresVeces = new Button("Finalizar Repetir Tres Veces");
+
+        BotonFinalizarSeleccionDeBloquesHandler botonFinalizarRepetirTresVecesHandler = new BotonFinalizarSeleccionDeBloquesHandler(botonBloqueAbajo,
+                botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
+                botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
+                botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler, repetirTresVeces, tablero);
+
+        botonFinalizarRepetirTresVeces.setOnAction(botonFinalizarRepetirTresVecesHandler);
+
+        Button botonFinalizarInvertir = new Button("Finalizar Invertir");
+
+        BotonFinalizarSeleccionDeBloquesHandler botonFinalizarInvertirHandler = new BotonFinalizarSeleccionDeBloquesHandler(botonBloqueAbajo,
+                botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
+                botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
+                botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler, invertir, tablero);
+
+        botonFinalizarInvertir.setOnAction(botonFinalizarInvertirHandler);
+
 
         sectorBloques.getChildren().add(botonGuardarAlgoritmo);
         sectorBloques.getChildren().add(botonRepetirDosVeces);
-        sectorBloques.getChildren().add(botonListoRepetirDosVeces);
+        sectorBloques.getChildren().add(botonafinalizarRepetirDosVeces);
         sectorBloques.getChildren().add(botonRepetirTresVeces);
+        sectorBloques.getChildren().add(botonFinalizarRepetirTresVeces);
         sectorBloques.getChildren().add(botonInvertir);
+        sectorBloques.getChildren().add(botonFinalizarInvertir);
         this.setLeft(sectorBloques);
 
     }
