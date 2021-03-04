@@ -72,19 +72,6 @@ public class BotonInvertirHandler implements EventHandler<ActionEvent> {
             public void handle(ActionEvent actionEvent) {
                 invertir.agregarBloque(posicion, new BloqueMoverAbajo());
                 posicion++;
-                Image imagenFlechaArriba = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/flechaArriba.jpg");
-                ImageView imagenFlechaArribaView = new ImageView(imagenFlechaArriba);
-                imagenFlechaArribaView.setFitWidth(40);
-                imagenFlechaArribaView.setFitHeight(35);
-                sectorAlgoritmo.setMargin(imagenFlechaArribaView, new Insets(10, 10, 10, 10));
-                sectorAlgoritmo.getChildren().add(imagenFlechaArribaView);
-            }
-        });
-        this.botonBloqueArriba.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                invertir.agregarBloque(posicion, new BloqueMoverArriba());
-                posicion++;
                 Image imagenFlechaAbajo = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/flechaAbajo.jpg");
                 ImageView imagenFlechaAbajoView = new ImageView(imagenFlechaAbajo);
                 imagenFlechaAbajoView.setFitWidth(40);
@@ -93,23 +80,23 @@ public class BotonInvertirHandler implements EventHandler<ActionEvent> {
                 sectorAlgoritmo.getChildren().add(imagenFlechaAbajoView);
             }
         });
+        this.botonBloqueArriba.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                invertir.agregarBloque(posicion, new BloqueMoverArriba());
+                posicion++;
+                Image imagenFlechaArriba = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/flechaArriba.jpg");
+                ImageView imagenFlechaArribaView = new ImageView(imagenFlechaArriba);
+                imagenFlechaArribaView.setFitWidth(40);
+                imagenFlechaArribaView.setFitHeight(35);
+                sectorAlgoritmo.setMargin(imagenFlechaArribaView, new Insets(10, 10, 10, 10));
+                sectorAlgoritmo.getChildren().add(imagenFlechaArribaView);
+            }
+        });
         this.botonBloqueDerecha.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 invertir.agregarBloque(posicion, new BloqueMoverDerecha());
-                posicion++;
-                Image imagenFlechaIzquierda = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/flechaIzquierda.jpg");
-                ImageView imagenFlechaIzquierdaView = new ImageView(imagenFlechaIzquierda);
-                imagenFlechaIzquierdaView.setFitWidth(40);
-                imagenFlechaIzquierdaView.setFitHeight(35);
-                sectorAlgoritmo.setMargin(imagenFlechaIzquierdaView , new Insets(10, 10, 10, 10));
-                sectorAlgoritmo.getChildren().add(imagenFlechaIzquierdaView );
-            }
-        });
-        this.botonBloqueIzquierda.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                invertir.agregarBloque(posicion, new BloqueMoverIzquierda());
                 posicion++;
                 Image imagenFlechaDerecha = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/flechaDerecha.jpg");
                 ImageView imagenFlechaDerechaView = new ImageView(imagenFlechaDerecha);
@@ -119,23 +106,23 @@ public class BotonInvertirHandler implements EventHandler<ActionEvent> {
                 sectorAlgoritmo.getChildren().add(imagenFlechaDerechaView);
             }
         });
+        this.botonBloqueIzquierda.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                invertir.agregarBloque(posicion, new BloqueMoverIzquierda());
+                posicion++;
+                Image imagenFlechaIzquierda = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/flechaIzquierda.jpg");
+                ImageView imagenFlechaIzquierdaView = new ImageView(imagenFlechaIzquierda);
+                imagenFlechaIzquierdaView.setFitWidth(40);
+                imagenFlechaIzquierdaView.setFitHeight(35);
+                sectorAlgoritmo.setMargin(imagenFlechaIzquierdaView , new Insets(10, 10, 10, 10));
+                sectorAlgoritmo.getChildren().add(imagenFlechaIzquierdaView );
+            }
+        });
         this.botonLapizAbajo.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 invertir.agregarBloque(posicion, new BloqueLapizAbajo());
-                posicion++;
-                Image imagenLapizArriba = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/personajeConLapizArriba.jpg");
-                ImageView imagenLapizArribaView = new ImageView(imagenLapizArriba);
-                imagenLapizArribaView.setFitWidth(60);
-                imagenLapizArribaView.setFitHeight(55);
-                sectorAlgoritmo.setMargin(imagenLapizArribaView, new Insets(10, 10, 10, 10));
-                sectorAlgoritmo.getChildren().add(imagenLapizArribaView);
-            }
-        });
-        this.botonLapizArriba.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                invertir.agregarBloque(posicion, new BloqueLapizArriba());
                 posicion++;
                 Image imagenLapizAbajo = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/personajeConLapizAbajo.jpg");
                 ImageView imagenLapizAbajoView = new ImageView(imagenLapizAbajo);
@@ -143,6 +130,19 @@ public class BotonInvertirHandler implements EventHandler<ActionEvent> {
                 imagenLapizAbajoView.setFitHeight(55);
                 sectorAlgoritmo.setMargin(imagenLapizAbajoView, new Insets(10, 10, 10, 10));
                 sectorAlgoritmo.getChildren().add(imagenLapizAbajoView);
+            }
+        });
+        this.botonLapizArriba.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                invertir.agregarBloque(posicion, new BloqueLapizArriba());
+                posicion++;
+                Image imagenLapizArriba = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/personajeConLapizArriba.jpg");
+                ImageView imagenLapizArribaView = new ImageView(imagenLapizArriba);
+                imagenLapizArribaView.setFitWidth(60);
+                imagenLapizArribaView.setFitHeight(55);
+                sectorAlgoritmo.setMargin(imagenLapizArribaView, new Insets(10, 10, 10, 10));
+                sectorAlgoritmo.getChildren().add(imagenLapizArribaView);
             }
         });
         Button botonInvertir = new Button("Finalizar Invertir");
