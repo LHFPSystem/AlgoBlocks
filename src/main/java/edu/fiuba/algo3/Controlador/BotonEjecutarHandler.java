@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 import edu.fiuba.algo3.modelo.Dibujo;
 
 
+
 public class BotonEjecutarHandler implements EventHandler<ActionEvent> {
     private Tablero tablero;
     private VBox sector;
@@ -42,24 +43,25 @@ public class BotonEjecutarHandler implements EventHandler<ActionEvent> {
 
 
         while(tramoFinal != null){
-            if (tramoFinal.estaElLapizLevantado() == false) {
-                canvas.getGraphicsContext2D().strokeLine(tramoInical.obtenerPosicionX(), tramoInical.obtenerPosicionY(),
-                        tramoFinal.obtenerPosicionX(), tramoFinal.obtenerPosicionY());
-            }
 
-            if (tramoFinal.estaElLapizLevantado() == true) {
-                canvas.getGraphicsContext2D().drawImage(imagenPersonajeConLapizLevantado, tramoFinal.obtenerPosicionX(),
-                        tramoFinal.obtenerPosicionY(), 75, 75);
-            } else {
-                canvas.getGraphicsContext2D().drawImage(imagenPersonajeConLapizBajo, tramoFinal.obtenerPosicionX(),
-                    tramoFinal.obtenerPosicionY(), 75, 75);
-            }
+                if (!tramoFinal.estaElLapizLevantado()) {
+                        canvas.getGraphicsContext2D().strokeLine(tramoInical.obtenerPosicionX(), tramoInical.obtenerPosicionY(),
+                                tramoFinal.obtenerPosicionX(), tramoFinal.obtenerPosicionY());
+                }
 
-            tramoInical = tramoFinal;
-            tramoFinal = dibujo.mostrarTramoYAvanzarAlSiguiente();
-            if(tramoFinal != null) {
-                tramoFinal = this.ajustarCoordenadas(tramoFinal);
-            }
+                if (tramoFinal.estaElLapizLevantado()) {
+                        canvas.getGraphicsContext2D().drawImage(imagenPersonajeConLapizLevantado, tramoFinal.obtenerPosicionX(),
+                                tramoFinal.obtenerPosicionY(), 75, 75);
+                } else {
+                        canvas.getGraphicsContext2D().drawImage(imagenPersonajeConLapizBajo, tramoFinal.obtenerPosicionX(),
+                                tramoFinal.obtenerPosicionY(), 75, 75);
+                }
+
+                tramoInical = tramoFinal;
+                tramoFinal = dibujo.mostrarTramoYAvanzarAlSiguiente();
+                if (tramoFinal != null) {
+                    tramoFinal = this.ajustarCoordenadas(tramoFinal);
+                }
         }
     }
 
