@@ -3,7 +3,9 @@ package edu.fiuba.algo3.Controlador;
 import edu.fiuba.algo3.modelo.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 public class BotonInvertirHandler implements EventHandler<ActionEvent> {
@@ -57,6 +59,10 @@ public class BotonInvertirHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
 
+        Label labelInvertir = new Label("--- Invertir ---");
+        sectorAlgoritmo.setMargin(labelInvertir, new Insets(10, 10, 10, 10));
+        sectorAlgoritmo.getChildren().add(labelInvertir);
+
         this.botonBloqueAbajo.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -104,7 +110,7 @@ public class BotonInvertirHandler implements EventHandler<ActionEvent> {
         BotonFinalizarSeleccionDeBloquesHandler botonFinalizarInvertirHandler = new BotonFinalizarSeleccionDeBloquesHandler(botonBloqueAbajo,
                 botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonLapizAbajo,botonLapizArriba,
                 botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
-                botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler, invertir, tablero, sector, botonInvertir);
+                botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler, invertir, tablero, sector, botonInvertir, sectorAlgoritmo);
         botonInvertir.setOnAction(botonFinalizarInvertirHandler);
 
         sector.getChildren().add(botonInvertir);

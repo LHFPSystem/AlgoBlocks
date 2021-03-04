@@ -4,7 +4,9 @@ import edu.fiuba.algo3.modelo.Bloque;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 
@@ -24,6 +26,7 @@ public class BotonFinalizarSeleccionDeBloquesHandler implements EventHandler<Act
     private Tablero tablero;
     private Bloque bloque;
     private VBox sector;
+    private VBox sectorAlgoritmo;
     private Button boton;
     public BotonFinalizarSeleccionDeBloquesHandler(Button botonBloqueAbajo, Button botonBloqueArriba,
                                                    Button botonBloqueDerecha, Button botonBloqueIzquierda,
@@ -34,7 +37,8 @@ public class BotonFinalizarSeleccionDeBloquesHandler implements EventHandler<Act
                                                    BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler,
                                                    BotonBloqueLapizArribaHandler botonBloqueLapizArribaHandler,
                                                    BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler,
-                                                   Bloque bloque , Tablero tablero, VBox sector, Button boton){
+                                                   Bloque bloque , Tablero tablero, VBox sector, Button boton,
+                                                   VBox sectorAlgoritmo){
 
         this.botonBloqueAbajo = botonBloqueAbajo;
         this.botonBloqueArriba = botonBloqueArriba;
@@ -52,6 +56,7 @@ public class BotonFinalizarSeleccionDeBloquesHandler implements EventHandler<Act
         this.bloque = bloque;
         this.sector = sector;
         this.boton = boton;
+        this.sectorAlgoritmo = sectorAlgoritmo;
     }
 
     @Override
@@ -64,5 +69,9 @@ public class BotonFinalizarSeleccionDeBloquesHandler implements EventHandler<Act
         this.botonLapizArriba.setOnAction(botonBloqueLapizArribaHandler);
         this.tablero.setBloque(this.bloque);
         sector.getChildren().remove(boton);
+
+        Label label = new Label("----------");
+        sectorAlgoritmo.setMargin(label, new Insets(10, 10, 10, 10));
+        sectorAlgoritmo.getChildren().add(label);
     }
 }

@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -60,6 +61,9 @@ public class BotonRepetirTresVecesHandler implements EventHandler<ActionEvent> {
     }
     @Override
     public void handle(ActionEvent actionEvent) {
+        Label labelRepetirTresVeces = new Label("--- Repetir tres veces ---");
+        sectorAlgoritmo.setMargin(labelRepetirTresVeces, new Insets(10, 10, 10, 10));
+        sectorAlgoritmo.getChildren().add(labelRepetirTresVeces);
 
         this.botonBloqueAbajo.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -140,7 +144,7 @@ public class BotonRepetirTresVecesHandler implements EventHandler<ActionEvent> {
         BotonFinalizarSeleccionDeBloquesHandler botonFinalizarRepetirTresVecesHandler = new BotonFinalizarSeleccionDeBloquesHandler(botonBloqueAbajo,
                 botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonLapizAbajo,botonLapizArriba,
                 botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
-                botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler, repetir, tablero, sector, boton);
+                botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler, repetir, tablero, sector, boton, sectorAlgoritmo);
         boton.setOnAction(botonFinalizarRepetirTresVecesHandler);
 
         sector.getChildren().add(boton);
