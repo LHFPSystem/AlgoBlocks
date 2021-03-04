@@ -1,10 +1,11 @@
 package edu.fiuba.algo3.Controlador;
 
+import edu.fiuba.algo3.modelo.Bloque;
+import edu.fiuba.algo3.modelo.Tablero;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
-import edu.fiuba.algo3.Controlador.BotonBloqueAbajoHandler;
-import edu.fiuba.algo3.Controlador.BotonBloqueArribaHandler;
+
 
 public class BotonListoRepetirDosVecesHandler implements EventHandler<ActionEvent> {
     private Button botonBloqueAbajo;
@@ -19,7 +20,8 @@ public class BotonListoRepetirDosVecesHandler implements EventHandler<ActionEven
     private BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler;
     private BotonBloqueLapizArribaHandler botonBloqueLapizArribaHandler;
     private BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler;
-
+    private Tablero tablero;
+    private Bloque bloque;
     public BotonListoRepetirDosVecesHandler(Button botonBloqueAbajo, Button botonBloqueArriba,
                                             Button botonBloqueDerecha, Button botonBloqueIzquierda,
                                             Button botonLapizAbajo, Button botonLapizArriba,
@@ -28,7 +30,8 @@ public class BotonListoRepetirDosVecesHandler implements EventHandler<ActionEven
                                             BotonBloqueDerechaHandler botonBloqueDerechaHandler,
                                             BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler,
                                             BotonBloqueLapizArribaHandler botonBloqueLapizArribaHandler,
-                                            BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler){
+                                            BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler,
+                                            Bloque bloque , Tablero tablero){
 
         this.botonBloqueAbajo = botonBloqueAbajo;
         this.botonBloqueArriba = botonBloqueArriba;
@@ -42,6 +45,8 @@ public class BotonListoRepetirDosVecesHandler implements EventHandler<ActionEven
         this.botonBloqueIzquierdaHandler = botonBloqueIzquierdaHandler;
         this.botonBloqueLapizArribaHandler = botonBloqueLapizArribaHandler;
         this.botonBloqueLapizAbajoHandler = botonBloqueLapizAbajoHandler;
+        this.tablero = tablero;
+        this.bloque = bloque;
     }
 
     @Override
@@ -50,7 +55,8 @@ public class BotonListoRepetirDosVecesHandler implements EventHandler<ActionEven
         this.botonBloqueArriba.setOnAction(botonBloqueArribaHandler);
         this.botonBloqueDerecha.setOnAction(botonBloqueDerechaHandler);
         this.botonBloqueIzquierda.setOnAction(botonBloqueIzquierdaHandler);
-        this.botonLapizAbajo.setOnAction(botonBloqueLapizArribaHandler);
-        this.botonLapizArriba.setOnAction(botonBloqueLapizAbajoHandler);
+        this.botonLapizAbajo.setOnAction(botonBloqueLapizAbajoHandler);
+        this.botonLapizArriba.setOnAction(botonBloqueLapizArribaHandler);
+        this.tablero.setBloque(this.bloque);
     }
 }

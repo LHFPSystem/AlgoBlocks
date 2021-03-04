@@ -13,6 +13,8 @@ import edu.fiuba.algo3.Controlador.BotonRepetirDosVecesHandler;
 import edu.fiuba.algo3.Controlador.BotonRepetirTresVecesHandler;
 import edu.fiuba.algo3.Controlador.BotonInvertirHandler;
 import edu.fiuba.algo3.Controlador.BotonListoRepetirDosVecesHandler;
+import edu.fiuba.algo3.modelo.BloqueInvertir;
+import edu.fiuba.algo3.modelo.BloqueRepetir;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -115,7 +117,8 @@ public class ContenedorPrincipal extends BorderPane {
         sectorBloques.setStyle("-fx-border-color: brown;");
 
         Button botonGuardarAlgoritmo = new Button("Guardar Algoritmo");
-        BotonGuardarAlgoritmoHandler botonGuardarAlgoritmoHandler = new BotonGuardarAlgoritmoHandler(tablero, vistaSectorAlgoritmo, sectorBloques);
+        BotonGuardarAlgoritmoHandler botonGuardarAlgoritmoHandler = new BotonGuardarAlgoritmoHandler(tablero,
+                vistaSectorAlgoritmo, sectorBloques);
         botonGuardarAlgoritmo.setOnAction(botonGuardarAlgoritmoHandler);
         Image imagenGuardarAlgoritmo = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/guardar.jpg");
         ImageView imagenGuardarAlgoritmoView = new ImageView(imagenGuardarAlgoritmo);
@@ -127,31 +130,39 @@ public class ContenedorPrincipal extends BorderPane {
         Button botonRepetirTresVeces = new Button("Repetir tres veces");
         Button botonInvertir = new Button("Invertir");
 
+        BloqueRepetir repetirDosVeces = new BloqueRepetir();
+        BloqueRepetir repetirTresVeces = new BloqueRepetir();
+        BloqueInvertir invertir = new BloqueInvertir();
+
         BotonRepetirDosVecesHandler botonRepetirDosVecesHandler = new BotonRepetirDosVecesHandler(botonBloqueAbajo,
-                botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba);
+                botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
+                repetirDosVeces);
 
         BotonRepetirTresVecesHandler botonRepetirTresVecesHandler = new BotonRepetirTresVecesHandler(botonBloqueAbajo,
-                botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba);
+                botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
+                repetirTresVeces);
 
-        BotonInvertirHandler botonInvertirHandler = new BotonInvertirHandler(botonBloqueAbajo,
-                botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba);
+        BotonInvertirHandler botonInvertirHandler = new BotonInvertirHandler(botonBloqueAbajo, botonBloqueArriba,
+                botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba, invertir);
 
         botonRepetirDosVeces.setOnAction(botonRepetirDosVecesHandler);
         botonRepetirTresVeces.setOnAction(botonRepetirTresVecesHandler);
         botonInvertir.setOnAction(botonInvertirHandler);
 
-        Button listoRepetirDosVeces = new Button("Finalizar Repetir Dos Veces");
+        Button botonListoRepetirDosVeces = new Button("Finalizar Repetir Dos Veces");
 
         BotonListoRepetirDosVecesHandler botonListoRepetirDosVecesHandler = new BotonListoRepetirDosVecesHandler(botonBloqueAbajo,
                 botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
                 botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
-                botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler);
+                botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler, repetirDosVeces, tablero);
 
-        listoRepetirDosVeces.setOnAction(botonListoRepetirDosVecesHandler);
+        botonListoRepetirDosVeces.setOnAction(botonListoRepetirDosVecesHandler);
 
         sectorBloques.getChildren().add(botonGuardarAlgoritmo);
         sectorBloques.getChildren().add(botonRepetirDosVeces);
-        sectorBloques.getChildren().add(listoRepetirDosVeces);
+        sectorBloques.getChildren().add(botonListoRepetirDosVeces);
+        sectorBloques.getChildren().add(botonRepetirTresVeces);
+        sectorBloques.getChildren().add(botonInvertir);
         this.setLeft(sectorBloques);
 
     }

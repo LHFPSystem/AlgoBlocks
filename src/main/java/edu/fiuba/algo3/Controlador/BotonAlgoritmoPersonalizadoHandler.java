@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.Controlador;
 
 import edu.fiuba.algo3.modelo.BloqueAlgoritmoPersonalizado;
-import edu.fiuba.algo3.modelo.BloqueMoverAbajo;
 import edu.fiuba.algo3.modelo.Tablero;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -24,7 +23,6 @@ public class BotonAlgoritmoPersonalizadoHandler implements EventHandler<ActionEv
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        //algoritmoPersonalizado.agregarListaBloques(tablero.getBloques());
         this.tablero.setBloque(algoritmoPersonalizado);
         Label nombreVista = new Label(nombre);
         sector.setMargin(nombreVista, new Insets(10, 10, 10, 10));

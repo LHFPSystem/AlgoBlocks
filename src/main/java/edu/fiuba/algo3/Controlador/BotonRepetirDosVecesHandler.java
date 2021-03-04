@@ -1,11 +1,9 @@
 package edu.fiuba.algo3.Controlador;
 
-import edu.fiuba.algo3.modelo.Bloque;
+import edu.fiuba.algo3.modelo.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
-
-import java.util.ArrayList;
 
 public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
 
@@ -15,13 +13,11 @@ public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
     private Button botonBloqueIzquierda;
     private Button botonBloqueLapizAbajo;
     private Button botonBloqueLapizArriba;
-
-    public BotonRepetirDosVecesHandler(Button botonBloqueAbajo,
-                                       Button botonBloqueArriba,
-                                       Button botonBloqueDerecha,
-                                       Button botonBloqueIzquierda,
-                                       Button botonBloqueLapizAbajo,
-                                       Button botonBloqueLapizArriba){
+    private int posicion = 0;
+    private BloqueRepetir repetir;
+    public BotonRepetirDosVecesHandler(Button botonBloqueAbajo, Button botonBloqueArriba, Button botonBloqueDerecha,
+                                       Button botonBloqueIzquierda, Button botonBloqueLapizAbajo,
+                                       Button botonBloqueLapizArriba, BloqueRepetir repetir){
 
         this.botonBloqueAbajo = botonBloqueAbajo;
         this.botonBloqueArriba = botonBloqueArriba;
@@ -29,6 +25,8 @@ public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
         this.botonBloqueIzquierda = botonBloqueIzquierda;
         this.botonBloqueLapizAbajo = botonBloqueLapizAbajo;
         this.botonBloqueLapizArriba = botonBloqueLapizArriba;
+        this.repetir = repetir;
+        this.repetir.establecerCantidadRepeticiones(2);
     }
     @Override
     public void handle(ActionEvent actionEvent) {
@@ -36,41 +34,46 @@ public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
         this.botonBloqueAbajo.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                System.out.println("Repetir Dos veces ");
+                repetir.agregarBloque(posicion,new BloqueMoverAbajo());
+                posicion++;
             }
+
         });
         this.botonBloqueArriba.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                System.out.println("Repetir Dos veces ");
+                repetir.agregarBloque(posicion,new BloqueMoverArriba());
+                posicion++;
             }
         });
         this.botonBloqueDerecha.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                System.out.println("Repetir Dos veces ");
+                repetir.agregarBloque(posicion,new BloqueMoverDerecha());
+                posicion++;
             }
         });
         this.botonBloqueIzquierda.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                System.out.println("Repetir Dos veces ");
+                repetir.agregarBloque(posicion,new BloqueMoverIzquierda());
+                posicion++;
             }
         });
         this.botonBloqueLapizAbajo.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                System.out.println("Repetir Dos veces ");
+                repetir.agregarBloque(posicion,new BloqueLapizAbajo());
+                posicion++;
             }
         });
         this.botonBloqueLapizArriba.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                System.out.println("Repetir Dos veces ");
+                repetir.agregarBloque(posicion,new BloqueLapizArriba());
+                posicion++;
             }
         });
-
-
 
     }
 }
