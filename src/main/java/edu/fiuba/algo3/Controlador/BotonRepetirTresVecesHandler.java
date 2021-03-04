@@ -24,7 +24,7 @@ public class BotonRepetirTresVecesHandler implements EventHandler<ActionEvent> {
     private BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler;
     private BotonBloqueLapizArribaHandler botonBloqueLapizArribaHandler;
     private BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler;
-    private int posicion = 0;
+    private int posicion;
     private BloqueRepetir repetir;
     private VBox sector;
     private Tablero tablero;
@@ -39,7 +39,7 @@ public class BotonRepetirTresVecesHandler implements EventHandler<ActionEvent> {
                                         BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler,
                                         BotonBloqueLapizArribaHandler botonBloqueLapizArribaHandler,
                                         BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler,
-                                        BloqueRepetir repetir, VBox sector, Tablero tablero, VBox sectorAlgoritmo){
+                                        VBox sector, Tablero tablero, VBox sectorAlgoritmo){
 
         this.botonBloqueAbajo = botonBloqueAbajo;
         this.botonBloqueArriba = botonBloqueArriba;
@@ -53,14 +53,17 @@ public class BotonRepetirTresVecesHandler implements EventHandler<ActionEvent> {
         this.botonBloqueIzquierdaHandler = botonBloqueIzquierdaHandler;
         this.botonBloqueLapizArribaHandler = botonBloqueLapizArribaHandler;
         this.botonBloqueLapizAbajoHandler = botonBloqueLapizAbajoHandler;
-        this.repetir = repetir;
-        this.repetir.establecerCantidadRepeticiones(3);
         this.sector = sector;
         this.tablero = tablero;
         this.sectorAlgoritmo = sectorAlgoritmo;
     }
     @Override
     public void handle(ActionEvent actionEvent) {
+
+        this.repetir = new BloqueRepetir();
+        this.repetir.establecerCantidadRepeticiones(3);
+        this.posicion = 0;
+
         Label labelRepetirTresVeces = new Label("--- Repetir tres veces ---");
         sectorAlgoritmo.setMargin(labelRepetirTresVeces, new Insets(10, 10, 10, 10));
         sectorAlgoritmo.getChildren().add(labelRepetirTresVeces);

@@ -22,7 +22,7 @@ public class BotonInvertirHandler implements EventHandler<ActionEvent> {
     private BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler;
     private BotonBloqueLapizArribaHandler botonBloqueLapizArribaHandler;
     private BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler;
-    private int posicion = 0;
+    private int posicion;
     private BloqueInvertir invertir;
     private VBox sector;
     private Tablero tablero;
@@ -36,7 +36,7 @@ public class BotonInvertirHandler implements EventHandler<ActionEvent> {
                                 BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler,
                                 BotonBloqueLapizArribaHandler botonBloqueLapizArribaHandler,
                                 BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler,
-                                BloqueInvertir invertir, VBox sector, Tablero tablero, VBox sectorAlgoritmo){
+                                VBox sector, Tablero tablero, VBox sectorAlgoritmo){
 
         this.botonBloqueAbajo = botonBloqueAbajo;
         this.botonBloqueArriba = botonBloqueArriba;
@@ -50,7 +50,6 @@ public class BotonInvertirHandler implements EventHandler<ActionEvent> {
         this.botonBloqueIzquierdaHandler = botonBloqueIzquierdaHandler;
         this.botonBloqueLapizArribaHandler = botonBloqueLapizArribaHandler;
         this.botonBloqueLapizAbajoHandler = botonBloqueLapizAbajoHandler;
-        this.invertir = invertir;
         this.sector = sector;
         this.tablero = tablero;
         this.sectorAlgoritmo = sectorAlgoritmo;
@@ -58,6 +57,9 @@ public class BotonInvertirHandler implements EventHandler<ActionEvent> {
     }
     @Override
     public void handle(ActionEvent actionEvent) {
+
+        this.invertir = new BloqueInvertir();
+        this.posicion = 0;
 
         Label labelInvertir = new Label("--- Invertir ---");
         sectorAlgoritmo.setMargin(labelInvertir, new Insets(10, 10, 10, 10));

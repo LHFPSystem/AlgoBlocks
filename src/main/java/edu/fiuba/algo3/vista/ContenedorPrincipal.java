@@ -128,27 +128,23 @@ public class ContenedorPrincipal extends BorderPane {
         Button botonRepetirTresVeces = new Button("Repetir tres veces");
         Button botonInvertir = new Button("Invertir");
 
-        BloqueRepetir repetirDosVeces = new BloqueRepetir();
-        BloqueRepetir repetirTresVeces = new BloqueRepetir();
-        BloqueInvertir invertir = new BloqueInvertir();
-
         BotonRepetirDosVecesHandler botonRepetirDosVecesHandler = new BotonRepetirDosVecesHandler(botonBloqueAbajo,
                 botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
                 botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
                 botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler,
-                repetirDosVeces, sectorBloques, tablero, vistaSectorAlgoritmo);
+                sectorBloques, tablero, vistaSectorAlgoritmo);
 
         BotonRepetirTresVecesHandler botonRepetirTresVecesHandler = new BotonRepetirTresVecesHandler(botonBloqueAbajo,
                 botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
                 botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
                 botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler,
-                repetirTresVeces, sectorBloques, tablero, vistaSectorAlgoritmo);
+                sectorBloques, tablero, vistaSectorAlgoritmo);
 
         BotonInvertirHandler botonInvertirHandler = new BotonInvertirHandler(botonBloqueAbajo,
                 botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
                 botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
                 botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler,
-                invertir, sectorBloques, tablero, vistaSectorAlgoritmo);
+                sectorBloques, tablero, vistaSectorAlgoritmo);
 
         botonRepetirDosVeces.setOnAction(botonRepetirDosVecesHandler);
         botonRepetirTresVeces.setOnAction(botonRepetirTresVecesHandler);
