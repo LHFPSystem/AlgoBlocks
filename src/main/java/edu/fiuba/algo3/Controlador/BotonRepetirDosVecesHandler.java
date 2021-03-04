@@ -25,6 +25,8 @@ public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
     private BloqueRepetir repetir;
     private VBox sector;
     private Tablero tablero;
+    private VBox sectorAlgoritmo;
+
     public BotonRepetirDosVecesHandler(Button botonBloqueAbajo, Button botonBloqueArriba,
                                        Button botonBloqueDerecha, Button botonBloqueIzquierda,
                                        Button botonLapizAbajo, Button botonLapizArriba,
@@ -34,7 +36,7 @@ public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
                                        BotonBloqueIzquierdaHandler botonBloqueIzquierdaHandler,
                                        BotonBloqueLapizArribaHandler botonBloqueLapizArribaHandler,
                                        BotonBloqueLapizAbajoHandler botonBloqueLapizAbajoHandler,
-                                       BloqueRepetir repetir, VBox sector, Tablero tablero){
+                                       BloqueRepetir repetir, VBox sector, Tablero tablero, VBox sectorAlgoritmo){
 
         this.botonBloqueAbajo = botonBloqueAbajo;
         this.botonBloqueArriba = botonBloqueArriba;
@@ -52,6 +54,7 @@ public class BotonRepetirDosVecesHandler implements EventHandler<ActionEvent> {
         this.repetir.establecerCantidadRepeticiones(2);
         this.sector = sector;
         this.tablero = tablero;
+        this.sectorAlgoritmo = sectorAlgoritmo;
     }
     @Override
     public void handle(ActionEvent actionEvent) {

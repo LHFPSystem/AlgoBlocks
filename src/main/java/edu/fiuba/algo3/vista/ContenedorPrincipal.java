@@ -138,7 +138,7 @@ public class ContenedorPrincipal extends BorderPane {
                 botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
                 botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
                 botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler,
-                repetirDosVeces, sectorBloques, tablero);
+                repetirDosVeces, sectorBloques, tablero, vistaSectorAlgoritmo);
 
         BotonRepetirTresVecesHandler botonRepetirTresVecesHandler = new BotonRepetirTresVecesHandler(botonBloqueAbajo,
                 botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
