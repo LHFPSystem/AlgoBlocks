@@ -139,6 +139,12 @@ public class BotonRepetirTresVecesHandler implements EventHandler<ActionEvent> {
             public void handle(ActionEvent actionEvent) {
                 repetir.agregarBloque(posicion,new BloqueLapizArriba());
                 posicion++;
+                Image imagenLapizArriba = new Image("file:src/main/java/edu/fiuba/algo3/vista/imagenes/personajeConLapizArriba.jpg");
+                ImageView imagenLapizArribaView = new ImageView(imagenLapizArriba);
+                imagenLapizArribaView.setFitWidth(60);
+                imagenLapizArribaView.setFitHeight(55);
+                sectorAlgoritmo.setMargin(imagenLapizArribaView, new Insets(10, 10, 10, 10));
+                sectorAlgoritmo.getChildren().add(imagenLapizArribaView);
 
             }
         });
