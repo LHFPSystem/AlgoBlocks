@@ -142,7 +142,9 @@ public class ContenedorPrincipal extends BorderPane {
 
         BotonRepetirTresVecesHandler botonRepetirTresVecesHandler = new BotonRepetirTresVecesHandler(botonBloqueAbajo,
                 botonBloqueArriba,botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba,
-                repetirTresVeces);
+                botonBloqueAbajoHandler,botonBloqueArribaHandler,botonBloqueDerechaHandler,botonBloqueIzquierdaHandler,
+                botonBloqueLapizArribaHandler,botonBloqueLapizAbajoHandler,
+                repetirDosVeces, sectorBloques, tablero, vistaSectorAlgoritmo);
 
         BotonInvertirHandler botonInvertirHandler = new BotonInvertirHandler(botonBloqueAbajo, botonBloqueArriba,
                 botonBloqueDerecha,botonBloqueIzquierda,botonBloqueLapizAbajo,botonBloqueLapizArriba, invertir);
@@ -181,11 +183,8 @@ public class ContenedorPrincipal extends BorderPane {
 */
         sectorBloques.getChildren().add(botonGuardarAlgoritmo);
         sectorBloques.getChildren().add(botonRepetirDosVeces);
-        //sectorBloques.getChildren().add(botonafinalizarRepetirDosVeces);
         sectorBloques.getChildren().add(botonRepetirTresVeces);
-        //sectorBloques.getChildren().add(botonFinalizarRepetirTresVeces);
         sectorBloques.getChildren().add(botonInvertir);
-        //sectorBloques.getChildren().add(botonFinalizarInvertir);
         this.setLeft(sectorBloques);
 
     }
